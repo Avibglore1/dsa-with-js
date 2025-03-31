@@ -47,30 +47,37 @@
 // }
 // console.log("Net payable amount = ", cost);
 
-let amount = Number(prompt("Enter the amount"));
-let fiveHundNotes,twoHundNotes,onehundNotes,fiftyNotes,twentyNotes,tens,ones;
-let balanceAmt;
 
-fiveHundNotes = Math.floor(amount/500);
-balanceAmt = amount - fiveHundNotes * 500;
-twoHundNotes = Math.floor(balanceAmt/200);
-balanceAmt = balanceAmt - twoHundNotes * 200;
-onehundNotes = Math.floor(balanceAmt/100);
-balanceAmt = balanceAmt - onehundNotes * 100;
-fiftyNotes = Math.floor(balanceAmt/50);
-balanceAmt = balanceAmt - fiftyNotes * 50;
-twentyNotes = Math.floor(balanceAmt/20);
-balanceAmt = balanceAmt - twentyNotes * 20;
-tens = Math.floor(balanceAmt/10);
-balanceAmt = balanceAmt - tens * 10;
-ones = balanceAmt;
-console.log("Input amount: ", amount)
-console.log(`
-    500 notes: ${fiveHundNotes}
-    200 notes: ${twoHundNotes}
-    100 notes: ${onehundNotes}
-    50 notes: ${fiftyNotes}
-    20 notes: ${twentyNotes}
-    10 notes: ${tens}
-    chillars: ${ones}`
-);
+
+// let amount = Number(prompt("Enter the amount"));
+// let fiveHundNotes,twoHundNotes,onehundNotes,fiftyNotes,twentyNotes,tens,ones;
+// let balanceAmt;
+
+// fiveHundNotes = Math.floor(amount/500);
+// balanceAmt = amount - fiveHundNotes * 500;
+// twoHundNotes = Math.floor(balanceAmt/200);
+// balanceAmt = balanceAmt - twoHundNotes * 200;
+// onehundNotes = Math.floor(balanceAmt/100);
+// balanceAmt = balanceAmt - onehundNotes * 100;
+// fiftyNotes = Math.floor(balanceAmt/50);
+// balanceAmt = balanceAmt - fiftyNotes * 50;
+// twentyNotes = Math.floor(balanceAmt/20);
+// balanceAmt = balanceAmt - twentyNotes * 20;
+// tens = Math.floor(balanceAmt/10);
+// balanceAmt = balanceAmt - tens * 10;
+// ones = balanceAmt;
+// console.log("Input amount: ", amount)
+// console.log(`
+//     500 notes: ${fiveHundNotes}
+//     200 notes: ${twoHundNotes}
+//     100 notes: ${onehundNotes}
+//     50 notes: ${fiftyNotes}
+//     20 notes: ${twentyNotes}
+//     10 notes: ${tens}
+//     chillars: ${ones}`
+// );
+
+
+const arr = [1,8,-58,987,true];
+arr.splice(1,0,45);
+console.log(arr)
