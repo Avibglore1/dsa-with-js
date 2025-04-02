@@ -85,45 +85,57 @@
 //     console.log(temp,"is Not a Strong number");
 // }
 
-let playAgain;
-do {
-    let computerNumber = Math.floor(Math.random()*100) + 1;
-    let guessedNumber = null;
-    let keepPlaying = true;
+// // let playAgain;
+// // do {
+// //     let computerNumber = Math.floor(Math.random()*100) + 1;
+// //     let guessedNumber = null;
+// //     let keepPlaying = true;
     
-    while(guessedNumber !== computerNumber && keepPlaying) {
-          let userInput = prompt("Enter a natural number between 1 to 100 which matches with computer number");
+// //     while(guessedNumber !== computerNumber && keepPlaying) {
+// //           let userInput = prompt("Enter a natural number between 1 to 100 which matches with computer number");
           
-          // Handle cancel button press
-          if(userInput === null) {
-              console.log("Game canceled by user");
-              keepPlaying = false;
-              continue;
-          }
+// //           // Handle cancel button press
+// //           if(userInput === null) {
+// //               console.log("Game canceled by user");
+// //               keepPlaying = false;
+// //               continue;
+// //           }
           
-          guessedNumber = Number(userInput);
+// //           guessedNumber = Number(userInput);
           
-          if(guessedNumber < computerNumber) {
-              console.log("Number too low");
-          } else if(guessedNumber > computerNumber) {
-              console.log("Number too high");        
-          } else {
-              console.log("Congrats you win 🎉🎉🎉🤩🤩");
+// //           if(guessedNumber < computerNumber) {
+// //               console.log("Number too low");
+// //           } else if(guessedNumber > computerNumber) {
+// //               console.log("Number too high");        
+// //           } else {
+// //               console.log("Congrats you win 🎉🎉🎉🤩🤩");
               
-              // Handle cancel on play again prompt
-              let playAgainInput = prompt("Want to play again, press yes");
-              playAgain = playAgainInput;
+// //               // Handle cancel on play again prompt
+// //               let playAgainInput = prompt("Want to play again, press yes");
+// //               playAgain = playAgainInput;
               
-              if(playAgainInput === null) {
-                  playAgain = "no"; // Treat cancel as "no"
-                  console.log("Game session ended");
-              }
-          }
+// //               if(playAgainInput === null) {
+// //                   playAgain = "no"; // Treat cancel as "no"
+// //                   console.log("Game session ended");
+// //               }
+// //           }
+// //     }
+    
+// //     if(!keepPlaying) {
+// //         playAgain = "no"; // Exit outer loop if user canceled during gameplay
+// //     }
+    
+// // } while(playAgain === "yes")
+
+   
+let obj={
+    firstName : "Avinash",
+    matches:['Cricket', 'Football', 'Hockey'],
+    sayHi:function(){
+        console.log("Say hi!")
     }
-    
-    if(!keepPlaying) {
-        playAgain = "no"; // Exit outer loop if user canceled during gameplay
-    }
-    
-} while(playAgain === "yes")
-    
+}
+
+for(let key in obj){
+    console.log("key:", key,"..............","value:", obj[key])
+}
