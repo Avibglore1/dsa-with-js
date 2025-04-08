@@ -51,22 +51,34 @@
 
 
 // frequency of each letter in word
-let word='Hello World';
-word = word.toLowerCase()
-let frequency ={};
-for (let i =0;i<word.length;i++){
-    if(word[i]===" "){
-        continue
+let word = 'Hello World';
+let frequency = {};
+let orderedChars = []; // Array to track character order
+
+for (let i = 0; i < word.length; i++) {
+    if (word[i] === " ") {
+        continue;
     }
-    if(frequency[word[i]]){
-        frequency[word[i]] ++;
-    }else{
-        frequency[word[i]] = 1
+    
+    if (frequency[word[i]]) {
+        frequency[word[i]]++;
+    } else {
+        frequency[word[i]] = 1;
+        orderedChars.push(word[i]); // Add character to ordered array
     }
 }
 
 console.log("original:", frequency);
-console.log("sorted object:", Object.fromEntries(Object.entries(frequency).sort()));
+
+// Create new object with ordered properties
+let orderedFrequency = {};
+orderedChars.forEach(char => {
+    orderedFrequency[char] = frequency[char];
+});
+
+console.log("ordered:", orderedFrequency);
+// console.log("sorted object:", Object.fromEntries(Object.entries(frequency).sort()));
+
 
 
 
