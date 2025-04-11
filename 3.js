@@ -85,8 +85,8 @@
 //     console.log(temp,"is Not a Strong number");
 // }
 
-// // let playAgain;
-// // do {
+// let playAgain;
+ // do {
 // //     let computerNumber = Math.floor(Math.random()*100) + 1;
 // //     let guessedNumber = null;
 // //     let keepPlaying = true;

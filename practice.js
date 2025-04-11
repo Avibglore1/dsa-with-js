@@ -13,7 +13,7 @@
 // let a = 5;
 // let b = ++a; // a = 6, b = 6
 
-// // Post-increment is commonly used in loops:
+// Post-increment is commonly used in loops:
 // const A =(Math.PI * 5).toFixed(3);
 // const B = Number(A)
 // console.log(typeof(B));
@@ -121,3 +121,118 @@
 
 
 /*************************************************lecture-3**************************************** */
+
+// let n = Number(prompt("Enter a number"));
+// let sum = 0;
+// for(let i=1;i<=n;i++){
+//     sum += i;
+//     console.log(i);
+// }
+// console.log("sum", sum);
+
+// let n = Number(prompt("Enter a number"));
+// let fact = 1
+// for(let i=n;i>=1;i--){
+//     console.log(i); 
+//     fact *=i;
+// }
+// console.log('factorial:',fact);
+
+
+// let n = Number(prompt("Enter a number"));
+// let factors = '';
+// for(let i=1;i<=n;i++){
+//     if(n%i===0) factors +=i+","
+// }
+// console.log(`factors of ${n}:`, factors.slice(0,-1));  //js supports -ve indexing
+
+
+// let n=Number(prompt("Enter a number"));
+// if(n<=1) console.log("Not a prime Number");
+// else if(n===2) console.log("Prime Number");
+// else if(n%2===0) console.log("Not a prime Number");
+
+// else {
+//     let isPrime = true;
+//     for (let i=3;i<=Math.sqrt(n);i+=2){
+//         if(n%i===0) {
+//             isPrime = false;
+//             break;
+//         }
+//    }
+//    console.log(`${isPrime?"It's a prime number":"Not a prime number"}`); 
+// }
+
+// sum of digits of a numnber
+// let n = Number(prompt("Enter a number"))
+// let sum = 0,r;
+// while(n>0){
+//     r = n%10;
+//     sum += r;
+//     n = Math.floor(n/10);
+// }
+// console.log("Sum:",sum);
+
+
+// strong number
+// let n = Number(prompt("Enter a number"));
+// let temp=n,sum=0,r,fact;
+// while(n>0){
+//     fact = 1;
+//     r = n%10;
+//     for(let i=1;i<=r;i++){
+//         fact *= i;
+//     }
+//     sum += fact;
+//     n = Math.floor(n/10);
+// }
+// if(sum===temp) console.log("Strong number");
+// else console.log("Not a strong number");
+
+// let obj={
+//     firstName : "Avinash",
+//     matches:['Cricket', 'Football', 'Hockey'],
+//     sayHi:function(){
+//         console.log("hi");
+//     }
+// }
+
+// for(let key in obj){
+//     console.log("key:", key,"..............","value:", obj[key])
+// }
+
+// console.log(obj.sayHi());
+
+
+let computerNumber = Math.floor(Math.random()*100) +1;
+let guessedNumber;
+do{
+     guessedNumber = prompt("Enter a number");
+     if(guessedNumber === null){
+        break;
+     }
+     guessedNumber = Number(guessedNumber)
+    if(guessedNumber === computerNumber){
+        alert("You won 🎉"); 
+    }
+    else if(guessedNumber < computerNumber){
+        alert("You typed smaller value");  
+    }else{
+        alert("Your value is larger");
+    }
+}while (guessedNumber !== computerNumber)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
