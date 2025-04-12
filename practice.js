@@ -276,9 +276,73 @@
     // console.log('Second Maximum value:',max2);
     
     
-   
+   /*******************************************Lecture-5********************************** */
+
+//    const word = "Avinash Kumar"
+//    for(let i=0;i<word.length;i++){
+//     if(word[i]===" ") continue;
+//     console.log(word[i]);
+//    }
     
-   
+
+    // const word = "Avinash kumar";
+    // for(let i=word.length-1;i>=0;i--){
+    //     if(word[i]===" ")continue;
+    //     console.log(word[i]);
+    // }
+
+    // const word = 'Avinash Kumar'
+    // let reverse = '';
+    // for(let i=word.length-1;i>=0;i--){
+    //     reverse += word[i]
+    // }
+    // console.log(reverse);
+
+    // const word = "Avinash Kumar";
+    // let  arr = word.split('');
+    // arr.reverse();
+    // console.log(arr.join(''));
+    
+
+    // const input = prompt("Enter a word");
+    // const word = input.replace(/\s+/g,'').toLowerCase();
+    // const arrWord = word.split('');
+    // arrWord.reverse();
+    // const reversedWord = arrWord.join('');
+    // if(reversedWord === word) console.log('palindrome');
+    // else console.log('Not a palindrome');
+    
+    // const word = "Happy New Year";
+    // let toggledWord='';
+    // for(let i=0;i<word.length;i++){
+    //     if(word[i] === word[i].toLowerCase()) toggledWord += word[i].toUpperCase();
+    //     else if(word[i] === word[i].toUpperCase()) toggledWord += word[i].toLowerCase();
+    //     else toggledWord += word[i];
+    // }
+    // console.log('toggled word:',toggledWord);
+
+
+    const word = prompt("Enter a word").toLowerCase();
+    const frequency = {};
+    
+    for(let i=0;i<word.length;i++){
+        if(frequency[word[i]]) frequency[word[i]]++
+        else frequency[word[i]] = 1;
+    }
+    console.log('frequency:',frequency);
+
+    const arr = Object.entries(frequency);
+    // console.log('arr', arr);
+    arr.sort((a,b)=>b[1]-a[1]);
+    arr.forEach(([char,count])=>{
+        console.log(`${char}: ${count}`);
+    })
+    
+    
+    
+    
+
+    
     
 
 
