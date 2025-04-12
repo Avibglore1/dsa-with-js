@@ -204,23 +204,82 @@
 // console.log(obj.sayHi());
 
 
-let computerNumber = Math.floor(Math.random()*100) +1;
-let guessedNumber;
-do{
-     guessedNumber = prompt("Enter a number");
-     if(guessedNumber === null){
-        break;
-     }
-     guessedNumber = Number(guessedNumber)
-    if(guessedNumber === computerNumber){
-        alert("You won 🎉"); 
-    }
-    else if(guessedNumber < computerNumber){
-        alert("You typed smaller value");  
-    }else{
-        alert("Your value is larger");
-    }
-}while (guessedNumber !== computerNumber)
+// let computerNumber = Math.floor(Math.random()*100) +1;
+// let guessedNumber;
+// do{
+//      guessedNumber = prompt("Enter a number");
+//      if(guessedNumber === null){
+//         break;
+//      }
+//      guessedNumber = Number(guessedNumber)
+//     if(guessedNumber === computerNumber){
+//         alert("You won 🎉"); 
+//     }
+//     else if(guessedNumber < computerNumber){
+//         alert("You typed smaller value");  
+//     }else{
+//         alert("Your value is larger");
+//     }
+// }while (guessedNumber !== computerNumber)
+
+
+    /****************************************************Lecture-4******************************** */
+
+    // const arr = new Array(5);
+
+    // for (let i=0;i<arr.length;i++){
+    //      arr[i] = prompt("Enter a number");
+    //     if(arr[i] === null){
+    //         console.log("Input cancelled by user");
+    //         break;            
+    //     };
+    //     arr[i] = Number(arr[i])
+    // }
+    // console.log(arr);
+    
+
+    // const arr=new Array(5);
+    // let sum=0;
+    // for(let i=0;i<arr.length;i++){
+    //     arr[i] = prompt("Enter a number");
+    //     if(arr[i] === null) break;
+    //     else if(isNaN(arr[i])) {
+    //         console.log('Wrong Input entered');
+    //         break;
+    //     }
+    //     console.log(arr[i]);
+    //     sum += Number(arr[i]);
+    // }
+    // console.log('sum',sum);
+    
+
+    // MAXIMUM AND 2ND MAXIMUM VALUE IN AN ARRAY
+    // const arr = [5,-5,85,74,52,102];
+    // const max = Math.max(...arr);
+    // console.log("Maximum value", max);
+
+    // const index = arr.indexOf(max);
+    // arr.splice(index,1);
+    
+    // const max2 = Math.max(...arr);
+    // console.log('Second maximum value:', max2);
+
+
+    // if we have duplicate values and we dont want repeated values to take up so for this:
+
+    // const arr = [5,5,85,85,96,74,52,23,96];
+    // const uniqueArr = [... new Set(arr)].sort((a,b)=>b-a);
+    // console.log(`arr: ${arr}\nuniqueArr: ${uniqueArr}`);
+    // const max1 = uniqueArr[0];
+    // const max2 = uniqueArr[1]
+    // console.log('Maximum value:',max1);
+    // console.log('Second Maximum value:',max2);
+    
+    
+   
+    
+   
+    
 
 
 
