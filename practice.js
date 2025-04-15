@@ -322,25 +322,131 @@
     // console.log('toggled word:',toggledWord);
 
 
-    const word = prompt("Enter a word").toLowerCase();
-    const frequency = {};
+    // const word = prompt("Enter a word").toLowerCase();
+    // const frequency = {};
     
-    for(let i=0;i<word.length;i++){
-        if(frequency[word[i]]) frequency[word[i]]++
-        else frequency[word[i]] = 1;
-    }
-    console.log('frequency:',frequency);
+    // for(let i=0;i<word.length;i++){
+    //     if(frequency[word[i]]) frequency[word[i]]++
+    //     else frequency[word[i]] = 1;
+    // }
+    // console.log('frequency:',frequency);
 
-    const arr = Object.entries(frequency);
-    // console.log('arr', arr);
-    arr.sort((a,b)=>b[1]-a[1]);
-    arr.forEach(([char,count])=>{
-        console.log(`${char}: ${count}`);
-    })
+    // const arr = Object.entries(frequency);
+    // // console.log('arr', arr);
+    // arr.sort((a,b)=>b[1]-a[1]);
+    // arr.forEach(([char,count])=>{
+    //     console.log(`${char}: ${count}`);
+    // })
     
     
+    /**************************************lecture-6******************************* */
     
-    
+// left-rotation by 1
+// const arr = [5,14,74,85,23,52] //[14,74,85,23,52,5]
+// let temp = arr[0];
+// for(let i=0;i<arr.length-1;i++){
+//     arr[i]=arr[i+1];
+// }
+// arr[arr.length-1] = temp;
+// console.log(arr);
+
+// right-rotation by 1
+
+// const arr = [5,14,74,85,23,52]; //[52,5,14,74,85,23]
+// let temp = arr[arr.length-1];
+// for(let i=arr.length-1;i>=1;i--){
+//     arr[i] = arr[i-1];
+// }
+// arr[0] = temp;
+// console.log(arr);
+
+// left-rotation by k element
+// const arr = [5,14,74,85,23,52];
+// let k = Number(prompt("Enter a number"));
+// k = k%arr.length;
+// for(let j=0;j<k;j++){
+//     let temp = arr[0];
+//     for(let i=0;i<arr.length-1;i++){
+//         arr[i] = arr[i+1];
+//     }
+//     arr[arr.length-1] = temp;
+// }
+// console.log(arr);
+
+// right-rotation by k element:
+// const arr = [5,14,74,85,23,52];
+// let k = Number(prompt("Enter a number"));
+// k = k%arr.length;
+// for(let j=0;j<k;j++){
+//     let temp = arr[arr.length-1];
+//     for(let i=arr.length-1;i>=1;i--){
+//         arr[i] = arr[i-1];
+//     }
+//     arr[0] = temp;
+// }
+// console.log(arr);
+
+/******2nd Approach***** */
+// right-rotation by k element
+// const arr = [5,14,74,85,23,52];
+// let k = Number(prompt('Enter number of times array to be rotated'));
+// k = k%arr.length;
+// let temp = [];
+// for(let i=0;i<arr.length;i++){
+//     temp[i] = arr[(i+k)%arr.length]
+// }
+// console.log(temp);
+
+// left-rotation by k element
+// const arr = [5,14,74,85,23,52];
+// let k = Number(prompt('Enter number of times array to be rotated'));
+// k = k%arr.length;
+// let temp = [];
+// for(let i=0;i<arr.length;i++){
+//     temp[(i+k)%arr.length] = arr[i]
+// }
+// console.log(temp);
+
+
+// 3rd approach-left rotation-three reversal tachnique
+// const arr = [5,14,74,85,23,52];
+// let k = Number(prompt('Enter number of times array to be rotated'));
+// k = k%arr.length;
+// let temp;
+
+// reverse(0,k-1);
+// reverse(k,arr.length-1);
+// reverse(0,arr.length-1)
+// function reverse(i,j){
+//     while(i<j){
+//         temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//         i++;
+//         j--
+//     }
+// }
+// console.log(arr);
+
+
+const arr = [5,14,74,85,23,52];
+let k = Number(prompt('Enter number of times array to be rotated'));
+k = k%arr.length;
+let temp;
+reverse(0,arr.length-1);
+reverse(k,arr.length-1);
+reverse(0,k-1)
+function reverse(i,j){
+    while(i<j){
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--
+    }
+}
+
+
 
     
     

@@ -1,6 +1,5 @@
 // const arr = [1,5,8,9,12];
 // [5,8,9,12,1];>>>>>>>>>>>>>>Left roation by 1
-
 // let temp = arr[0];
 // for(let i=0;i<arr.length-1;i++){
 //     arr[i] = arr[i+1];
