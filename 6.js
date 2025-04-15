@@ -101,28 +101,127 @@
 
 
 // 3rd approach -right rotaion w/o extra space and w/o time complexity of n2;
-const length_of_Array = Number(prompt("Enter length of the array"));
-let arr = new Array(length_of_Array);
-for(let i=0;i<length_of_Array;i++){
-    arr[i] = Number(prompt("Enter elements in an array"));
-    if(arr[i]=== null){
-        break;
-    }
-}
-let k = Number(prompt("Enter number of rotation to be done"));
-k = k%length_of_Array;
+// const length_of_Array = Number(prompt("Enter length of the array"));
+// let arr = new Array(length_of_Array);
+// for(let i=0;i<length_of_Array;i++){
+//     arr[i] = Number(prompt("Enter elements in an array"));
+//     if(arr[i]=== null){
+//         break;
+//     }
+// }
+// let k = Number(prompt("Enter number of rotation to be done"));
+// k = k%length_of_Array;
 
-reverse(0,arr.length-1);
-reverse(0,k-1);
-reverse(k,arr.length-1);
-console.log(arr);
+// reverse(0,arr.length-1);
+// reverse(0,k-1);
+// reverse(k,arr.length-1);
+// console.log(arr);
 
-function reverse(i,j){
-    while(i<j){
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        i++;
-        j--
+// function reverse(i,j){
+//     while(i<j){
+//         let temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//         i++;
+//         j--
+//     }
+// }
+
+
+
+// In-place removal for already sorted arrays
+// const nums = [0,0,1,1,1,2,2,2,3,4,5]
+
+// function removeDuplicates(arr){
+//     if(arr.length === 0) return 0;
+//     let uniqueIndex = 0;
+//     for(let i=1;i<arr.length;i++){
+//         if(arr[i] !== arr[uniqueIndex]){
+//             uniqueIndex++;
+//             arr[uniqueIndex] = arr[i]
+//         }
+//     }
+//     return uniqueIndex + 1;
+// }
+// const uniqueNums = removeDuplicates(nums);
+// console.log(uniqueNums);
+
+
+
+// const a = [1,5,8,52];
+// const b = [2,3,5,9,31];
+
+// let temp = [...a,...b];
+// console.log(temp);
+// temp.sort((a,b)=>a-b)
+// console.log(temp);
+// const uniqueArr = [...new Set(temp)];
+// console.log('uniqueArr', uniqueArr);
+
+// buy and sell stocks
+// const arr = [7,1,5,3,6,4];
+// let maxProfit=0;
+// let min = arr[0];
+
+// for(let i=1;i<arr.length;i++){
+//     if(arr[i]<min){
+//         min = arr[i];
+//     }else{
+//         if(arr[i]-min>maxProfit){
+//             maxProfit = arr[i]-min
+//         }
+//     }
+// }
+
+// console.log(maxProfit);
+
+// move 0's to left and 2's to right
+// const arr = [1,1,0,1,2,0,1,0,2,1,1]
+// let j=0;
+// let i=0;
+// let k = arr.length-1
+// let temp;
+// while(i<=k){
+// if(arr[i] === 2){
+// temp = arr[i];
+// arr[i] = arr[k];
+// arr[k] = temp;
+// k--
+// }
+// else if(arr[i] === 0){
+//     temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     j++;
+//     i++
+// }
+// else{
+//     i++
+// }
+
+// }
+// console.log(arr);
+
+// maximum sum in subarray
+var maxSubArray = function(nums){
+    let max = -Infinity;
+    let sum = 0;
+    for(let i=0;i<nums.length;i++){
+        sum += nums[i];
+        max = Math.max(sum,max);
+        if(sum<0) sum=0;
     }
+    return max;
 }
+
+const largestSum = maxSubArray([-2,-1,-3,4,-1,2,1,-5,4]);
+console.log(largestSum);
+
+
+
+
+
+
+
+
+
