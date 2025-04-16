@@ -203,19 +203,67 @@
 // console.log(arr);
 
 // maximum sum in subarray
-var maxSubArray = function(nums){
-    let max = -Infinity;
-    let sum = 0;
-    for(let i=0;i<nums.length;i++){
-        sum += nums[i];
-        max = Math.max(sum,max);
-        if(sum<0) sum=0;
-    }
-    return max;
+// var maxSubArray = function(nums){
+//     let max = -Infinity;
+//     let sum = 0;
+//     for(let i=0;i<nums.length;i++){
+//         sum += nums[i];
+//         max = Math.max(sum,max);
+//         if(sum<0) sum=0;
+//     }
+//     return max;
+// }
+
+// const largestSum = maxSubArray([-2,-1,-3,4,-1,2,1,-5,4]);
+// console.log(largestSum);
+
+
+// maximum frequecy element-Boyer-Moore Majority Vote algorithm,
+// const arr = [2,1,2,2,1,1,2,3,1,1,3,1,1,5,5];
+// let answer = arr[0];
+// let count = 1
+// for(let i=1;i<arr.length;i++){
+//     if(arr[i]===answer){
+//         count++
+//     }else{
+//         if(count === 0){
+//             answer = arr[i];
+//             count++;
+//         }else{
+//             count--
+//         }
+//     }
+// }
+// console.log(arr);
+
+// console.log(answer);
+
+
+// Trapping water
+const arr= [4,2,0,3,2,5];
+
+let leftArr=[]
+let rightArr=[];
+let leftmax = arr[0];
+let rightmax = arr[arr.length-1];
+let min,diff,sum=0;
+for(let i=0;i<arr.length;i++){
+    leftmax = Math.max(arr[i],leftmax);
+    leftArr[i] = leftmax
 }
 
-const largestSum = maxSubArray([-2,-1,-3,4,-1,2,1,-5,4]);
-console.log(largestSum);
+for(let i=arr.length-1;i>=0;i--){
+   rightmax = Math.max(arr[i],rightmax);
+   rightArr[i] = rightmax
+}
+
+for(let i=0;i<arr.length;i++){
+    min = Math.min(leftArr[i],rightArr[i]);
+    diff = min-arr[i];
+    sum +=diff
+    
+}
+console.log(sum);
 
 
 
