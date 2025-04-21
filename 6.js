@@ -240,32 +240,45 @@
 
 
 // Trapping water
-const arr= [4,2,0,3,2,5];
+// const arr= [4,2,0,3,2,5];
 
-let leftArr=[]
-let rightArr=[];
-let leftmax = arr[0];
-let rightmax = arr[arr.length-1];
-let min,diff,sum=0;
-for(let i=0;i<arr.length;i++){
-    leftmax = Math.max(arr[i],leftmax);
-    leftArr[i] = leftmax
-}
+// let leftArr=[]
+// let rightArr=[];
+// let leftmax = arr[0];
+// let rightmax = arr[arr.length-1];
+// let min,diff,sum=0;
+// for(let i=0;i<arr.length;i++){
+//     leftmax = Math.max(arr[i],leftmax);
+//     leftArr[i] = leftmax
+// }
 
-for(let i=arr.length-1;i>=0;i--){
-   rightmax = Math.max(arr[i],rightmax);
-   rightArr[i] = rightmax
-}
+// for(let i=arr.length-1;i>=0;i--){
+//    rightmax = Math.max(arr[i],rightmax);
+//    rightArr[i] = rightmax
+// }
 
-for(let i=0;i<arr.length;i++){
-    min = Math.min(leftArr[i],rightArr[i]);
-    diff = min-arr[i];
-    sum +=diff
+// for(let i=0;i<arr.length;i++){
+//     min = Math.min(leftArr[i],rightArr[i]);
+//     diff = min-arr[i];
+//     sum +=diff
     
-}
-console.log(sum);
+// }
+// console.log(sum);
 
 
+/********************************Revison************** */
+
+// leftrotation by 1 element:
+// const arr = [5,12,10,85,6];//[12,10,85,6,5]
+// console.log('arr',arr);
+
+// let copy = arr[0];
+// for(let i=0;i<arr.length-1;i++){
+//     arr[i] = arr[i+1];
+// }
+// arr[arr.length-1] = copy;
+
+// console.log('left-rotation',arr);
 
 
 
