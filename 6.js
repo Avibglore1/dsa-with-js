@@ -293,6 +293,21 @@
 // console.log('rightrotation',arr);
 
 
+// left-rotation by k elements;
+const arr = [5,12,30,85,41];
+let k = Number(prompt("Enter a number"));
+console.log('arr',arr);
+k = k%arr.length;
+for(j=0;j<k;j++){
+    let copy = arr[0];
+for(let i=0;i<arr.length-1;i++){
+    arr[i] = arr[i+1];
+}
+arr[arr.length-1] = copy
+}
+
+console.log('leftrotationbyk',arr);
+
 
 
 
