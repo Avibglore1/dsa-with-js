@@ -326,7 +326,29 @@
 // console.log('rightrotationbyk',arr);
 
 
+// 2nd approach left rotation by k elemement
+// const arr = [1,2,3,4,5];
+// let k = Number(prompt("Enter a number"));
+// k = k%arr.length;
+// let temp = [];
+// console.log('arr',arr);
 
+// for(let i=0;i<arr.length;i++){
+//     temp[i] = arr[(i+k)%arr.length];
+// }
+// console.log('leftrotationbyk', temp);
+
+// 2nd approach right rotation by k element
+// const arr = [1,2,3,4,5];
+// let k = Number(prompt("Enter a number"));
+// k = k%arr.length;
+// let temp = [];
+// console.log('arr',arr);
+// for(let i=0;i<arr.length;i++){
+//     temp[(i+k)%arr.length] = arr[i];
+// }
+
+// console.log('rightrotationbykelement',temp);
 
 
 
