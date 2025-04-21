@@ -351,4 +351,55 @@
 // console.log('rightrotationbykelement',temp);
 
 
+// ReverseBlockAlgorithm-best Approach:
+
+// const arr=[1,2,3,4,5];
+// let k = Number(prompt('Enter a number'));
+// let temp;
+// k = k%arr.length;
+// console.log('arr',arr);
+
+// reverse(0,k-1);
+// reverse(k,arr.length-1);
+// reverse(0,arr.length-1)
+
+// function reverse(i,j){
+//     while(i<j){
+//         temp = arr[i];
+//         arr[i]= arr[j];
+//         arr[j] = temp;
+//         i++;
+//         j--
+//         }
+// }
+
+// console.log('leftrotationbyk',arr);
+
+
+
+
+const arr=[1,2,3,4,5];
+let k = Number(prompt('Enter a number'));
+let temp;
+k = k%arr.length;
+console.log('arr',arr);
+
+reverse(arr.length-k,arr.length-1);
+reverse(0,arr.length-1-k);
+reverse(0,arr.length-1)
+
+function reverse(i,j){
+    while(i<j){
+        temp = arr[i];
+        arr[i]= arr[j];
+        arr[j] = temp;
+        i++;
+        j--
+        }
+}
+
+console.log('rightrotationbyk',arr);
+
+
+
 
