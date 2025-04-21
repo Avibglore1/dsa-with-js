@@ -404,9 +404,24 @@
 // remove duplicates from sortedArray
 const arr = [1,5,8,8,11,13];
 
-const set = new Set(arr);
-console.log(Array.from(set));
+// const set = new Set(arr);
+// console.log(Array.from(set));
+let j=1
+for(let i=0;i<arr.length-1;i++){
+    if(arr[i]===arr[i+1]) continue;
+    else{
+        arr[j] = arr[i+1];
+        j++
+    }
+}
 
-// 
+// console.log('arr',arr);
+console.log('uniqueElements',j);
+
+
+
+/*****above removing duplicate algo works same for both descending and ascending order */
+
+ 
 
 
