@@ -378,28 +378,35 @@
 
 
 
-const arr=[1,2,3,4,5];
-let k = Number(prompt('Enter a number'));
-let temp;
-k = k%arr.length;
-console.log('arr',arr);
+// const arr=[1,2,3,4,5];
+// let k = Number(prompt('Enter a number'));
+// let temp;
+// k = k%arr.length;
+// console.log('arr',arr);
 
-reverse(arr.length-k,arr.length-1);
-reverse(0,arr.length-1-k);
-reverse(0,arr.length-1)
+// reverse(arr.length-k,arr.length-1);
+// reverse(0,arr.length-1-k);
+// reverse(0,arr.length-1)
 
-function reverse(i,j){
-    while(i<j){
-        temp = arr[i];
-        arr[i]= arr[j];
-        arr[j] = temp;
-        i++;
-        j--
-        }
-}
+// function reverse(i,j){
+//     while(i<j){
+//         temp = arr[i];
+//         arr[i]= arr[j];
+//         arr[j] = temp;
+//         i++;
+//         j--
+//         }
+// }
 
-console.log('rightrotationbyk',arr);
+// console.log('rightrotationbyk',arr);
 
 
+// remove duplicates from sortedArray
+const arr = [1,5,8,8,11,13];
+
+const set = new Set(arr);
+console.log(Array.from(set));
+
+// 
 
 
