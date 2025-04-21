@@ -402,26 +402,65 @@
 
 
 // remove duplicates from sortedArray
-const arr = [1,5,8,8,11,13];
+// const arr = [1,5,8,8,11,13];
 
 // const set = new Set(arr);
 // console.log(Array.from(set));
-let j=1
-for(let i=0;i<arr.length-1;i++){
-    if(arr[i]===arr[i+1]) continue;
-    else{
-        arr[j] = arr[i+1];
-        j++
-    }
-}
+// let j=1
+// for(let i=0;i<arr.length-1;i++){
+//     if(arr[i]===arr[i+1]) continue;
+//     else{
+//         arr[j] = arr[i+1];
+//         j++
+//     }
+// }
 
 // console.log('arr',arr);
-console.log('uniqueElements',j);
+// console.log('uniqueElements',j);
 
 
 
 /*****above removing duplicate algo works same for both descending and ascending order */
 
  
+// mergesortedarray
+
+const arr1 = [1,5,8,11,14];
+const arr2 = [2,4,6,8];
+
+// const set = new Set([...arr1,...arr2])
+// const combinedArray = Array.from(set);
+// combinedArray.sort((a,b)=>a-b);
+
+// console.log('combinedArray',combinedArray);
+
+
+let temp = []
+let k=i=j=0;
+
+while(i<arr1.length && j<arr2.length){
+    if(arr1[i]<arr2[j]) {
+        temp[k] = arr1[i];
+        i++;
+        k++;
+    }else{
+        temp[k] = arr2[j];
+        j++;
+        k++
+    }
+}
+while(i<arr1.length){
+    temp[k] = arr1[i];
+    k++;
+    i++
+}while(j<arr2.length){
+    temp[k] = arr2[j];
+    k++;
+    j++;
+}
+
+console.log(temp);
+
+
 
 
