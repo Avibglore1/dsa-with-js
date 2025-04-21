@@ -280,6 +280,18 @@
 
 // console.log('left-rotation',arr);
 
+// rightrotation by 1:
+// const arr = [5,20,32,41,21] //[21,5,20,32,41]
+// console.log('arr',arr);
+
+// let copy = arr[arr.length-1];
+// for(let i=arr.length-1;i>=1;i--){
+//     arr[i] = arr[i-1]
+// }
+
+// arr[0] = copy;
+// console.log('rightrotation',arr);
+
 
 
 
