@@ -425,8 +425,8 @@
  
 // mergesortedarray
 
-const arr1 = [1,5,8,11,14];
-const arr2 = [2,4,6,8];
+// const arr1 = [1,5,8,11,14];
+// const arr2 = [2,4,6,8];
 
 // const set = new Set([...arr1,...arr2])
 // const combinedArray = Array.from(set);
@@ -435,32 +435,110 @@ const arr2 = [2,4,6,8];
 // console.log('combinedArray',combinedArray);
 
 
-let temp = []
-let k=i=j=0;
+// let temp = []
+// let k=i=j=0;
 
-while(i<arr1.length && j<arr2.length){
-    if(arr1[i]<arr2[j]) {
-        temp[k] = arr1[i];
-        i++;
-        k++;
-    }else{
-        temp[k] = arr2[j];
-        j++;
-        k++
-    }
+// while(i<arr1.length && j<arr2.length){
+//     if(arr1[i]<arr2[j]) {
+//         temp[k] = arr1[i];
+//         i++;
+//         k++;
+//     }else{
+//         temp[k] = arr2[j];
+//         j++;
+//         k++
+//     }
+// }
+// while(i<arr1.length){
+//     temp[k] = arr1[i];
+//     k++;
+//     i++
+// }while(j<arr2.length){
+//     temp[k] = arr2[j];
+//     k++;
+//     j++;
+// }
+
+// console.log(temp);
+
+
+// var merge = function(nums1, m, nums2, n) {
+    
+//     let i = m - 1;     
+//     let j = n - 1;     
+//     let k = m + n - 1; 
+    
+
+//     while (i >= 0 && j >= 0) {
+//         if (nums1[i] > nums2[j]) {
+//             nums1[k--] = nums1[i--];
+//         } else {
+//             nums1[k--] = nums2[j--];
+//         }
+//     }
+    
+//     while (j >= 0) {
+//         nums1[k--] = nums2[j--];
+//     }
+// };
+
+// sortcolor
+
+// const arr = [2,0,2,1,1,0]
+// let i=j=0;
+// let temp;
+// let k = arr.length-1
+// while(i<=k){
+//     if(arr[i] === 0){
+//         temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//         j++;
+//         i++;
+//     }else if(arr[i] === 2){
+//         temp = arr[i];
+//         arr[i] = arr[k];
+//         arr[k] = temp;
+//         k--;
+//     }else{
+//         i++
+//     }
+// }
+
+// console.log(arr);
+
+
+    // maximum subarray
+//     const arr = [-2,1,-3,4,-1,2,1,-5,4];
+//     let sum = 0;
+//     let maxSum = -Infinity;
+
+//     for(let i=0;i<arr.length;i++){
+//     sum +=arr[i];
+//     if(sum>maxSum) maxSum=sum;
+//     if(sum<0) sum=0;
+   
+// }
+// console.log('maxsum',maxSum);
+
+
+
+// mostrepeatednumber in array
+const arr = [2,2,1,1,1,2,2];
+
+let item =arr[0],count=1;
+for(let i=1;i<arr.length;i++){
+if(count === 0){
+    item = arr[i];
+    count = 1
+}else if(arr[i] === item) count++;
+else count--
 }
-while(i<arr1.length){
-    temp[k] = arr1[i];
-    k++;
-    i++
-}while(j<arr2.length){
-    temp[k] = arr2[j];
-    k++;
-    j++;
+
+if(count>0){
+    console.log('maximum repeated value:',item);
 }
 
-console.log(temp);
-
-
-
+// console.log('count',count);
+// console.log('item',item);
 
