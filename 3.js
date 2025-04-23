@@ -85,57 +85,80 @@
 //     console.log(temp,"is Not a Strong number");
 // }
 
-// let playAgain;
- // do {
-// //     let computerNumber = Math.floor(Math.random()*100) + 1;
-// //     let guessedNumber = null;
-// //     let keepPlaying = true;
-    
-// //     while(guessedNumber !== computerNumber && keepPlaying) {
-// //           let userInput = prompt("Enter a natural number between 1 to 100 which matches with computer number");
-          
-// //           // Handle cancel button press
-// //           if(userInput === null) {
-// //               console.log("Game canceled by user");
-// //               keepPlaying = false;
-// //               continue;
-// //           }
-          
-// //           guessedNumber = Number(userInput);
-          
-// //           if(guessedNumber < computerNumber) {
-// //               console.log("Number too low");
-// //           } else if(guessedNumber > computerNumber) {
-// //               console.log("Number too high");        
-// //           } else {
-// //               console.log("Congrats you win 🎉🎉🎉🤩🤩");
-              
-// //               // Handle cancel on play again prompt
-// //               let playAgainInput = prompt("Want to play again, press yes");
-// //               playAgain = playAgainInput;
-              
-// //               if(playAgainInput === null) {
-// //                   playAgain = "no"; // Treat cancel as "no"
-// //                   console.log("Game session ended");
-// //               }
-// //           }
-// //     }
-    
-// //     if(!keepPlaying) {
-// //         playAgain = "no"; // Exit outer loop if user canceled during gameplay
-// //     }
-    
-// // } while(playAgain === "yes")
+
 
    
-let obj={
-    firstName : "Avinash",
-    matches:['Cricket', 'Football', 'Hockey'],
-    sayHi:function(){
-        console.log("Say hi!")
-    }
+// let obj={
+//     firstName : "Avinash",
+//     matches:['Cricket', 'Football', 'Hockey'],
+//     sayHi:function(){
+//         console.log("Say hi!")
+//     }
+// }
+
+// for(let key in obj){
+//     console.log("key:", key,"..............","value:", obj[key])
+// }
+
+
+/**********************************revision************** */
+
+// for(let i=1;i<=6;i++){
+//     console.log('i',i);
+// }
+
+// reverse,sum,factorial,factors,prime:
+
+// const n = Number(prompt("Enter a number"));
+// if(isNaN(n)) console.log("Enter integer value");
+// for(let i=n;i>=1;i--) console.log(i);
+
+// sum
+// let sum = 0;
+// for(let i=0;i<5;i++){
+//     sum += i;
+// }
+// console.log('sum',sum);
+
+// FACTORIAL
+// let fact = 1;
+// for(let i=1;i<=5;i++){
+//     fact *= i;
+// }
+// console.log('factorial',fact);
+
+// factors:
+// let n = 87;
+// let factors = '';
+// for(let i=1;i<=n;i++){
+//     if(n%i===0) factors +=i + " ";
+// }
+// console.log('factors:',factors);
+
+
+// primeNo:
+// let factors = 0;
+// let n = Number(prompt("Enter a anumber"));
+// for(let i=2;i<n;i++){
+//     if(n%i===0) factors++
+// }
+// if(factors===0) console.log('primeNumber');
+// else console.log('consonantNumber');
+
+// optimisedcodeforPrimeNumber
+let n = Number(prompt("Enter a number"));
+function prime(n){
+if(n===1) return false;
+if(n===2) return true;
+if(n%2===0)return false;
+for(let i=3;i<=Math.sqrt(n);i+=2){
+    if(n%i===0) return false;
+}
+return true;
 }
 
-for(let key in obj){
-    console.log("key:", key,"..............","value:", obj[key])
-}
+if(prime(n)) console.log('primeNumber');
+else console.log('notaprimeNumber');
+
+
+
