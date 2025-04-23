@@ -79,5 +79,6 @@
 
 
 const arr = [1,8,-58,987,true];
-arr.splice(1,0,45);
+const arr1 = arr.splice(1,1,45);
 console.log(arr)
+console.log(arr1);
