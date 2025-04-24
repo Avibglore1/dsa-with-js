@@ -146,19 +146,45 @@
 // else console.log('consonantNumber');
 
 // optimisedcodeforPrimeNumber
-let n = Number(prompt("Enter a number"));
-function prime(n){
-if(n===1) return false;
-if(n===2) return true;
-if(n%2===0)return false;
-for(let i=3;i<=Math.sqrt(n);i+=2){
-    if(n%i===0) return false;
+// let n = Number(prompt("Enter a number"));
+// function prime(n){
+// if(n===1) return false;
+// if(n===2) return true;
+// if(n%2===0)return false;
+// for(let i=3;i<=Math.sqrt(n);i+=2){
+//     if(n%i===0) return false;
+// }
+// return true;
+// }
+
+// if(prime(n)) console.log('primeNumber');
+// else console.log('notaprimeNumber');
+
+
+
+// sumofdigits,strongNumber
+
+// let n = 54212536;
+// let r,sum = 0;
+// while(n>0){
+//     r = n%10;
+//     sum +=r;
+//     n = Math.floor(n/10);
+// }
+// console.log('sum',sum);
+
+let n=2,temp= n;
+let r,sum = 0,fact;
+
+while(n>0){
+    r = n%10;
+    fact = 1;
+    for(i=1;i<=r;i++){
+        fact *=i;
+    }
+    sum +=fact;
+    n = Math.floor(n/10);
 }
-return true;
-}
 
-if(prime(n)) console.log('primeNumber');
-else console.log('notaprimeNumber');
-
-
-
+if(temp === sum) console.log('Strong Number');
+else console.log('Not a strong number');
