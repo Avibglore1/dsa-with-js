@@ -173,18 +173,18 @@
 // }
 // console.log('sum',sum);
 
-let n=2,temp= n;
-let r,sum = 0,fact;
+// let n=2,temp= n;
+// let r,sum = 0,fact;
 
-while(n>0){
-    r = n%10;
-    fact = 1;
-    for(i=1;i<=r;i++){
-        fact *=i;
-    }
-    sum +=fact;
-    n = Math.floor(n/10);
-}
+// while(n>0){
+//     r = n%10;
+//     fact = 1;
+//     for(i=1;i<=r;i++){
+//         fact *=i;
+//     }
+//     sum +=fact;
+//     n = Math.floor(n/10);
+// }
 
-if(temp === sum) console.log('Strong Number');
-else console.log('Not a strong number');
+// if(temp === sum) console.log('Strong Number');
+// else console.log('Not a strong number');
