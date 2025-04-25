@@ -140,17 +140,17 @@
 
 
 // (-ve)nos on left and (+ve)on right
-const arr = [-5,-87,56,45,74,-85,-6];
-let j=0,temp;
-for(i=0;i<arr.length;i++){
-    if(arr[i]<0){
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        j++
-    }
-}
-console.log('arr',arr);
+// const arr = [-5,-87,56,45,74,-85,-6];
+// let j=0,temp;
+// for(i=0;i<arr.length;i++){
+//     if(arr[i]<0){
+//         temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//         j++
+//     }
+// }
+// console.log('arr',arr);
 
 
 
