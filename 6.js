@@ -588,3 +588,24 @@
 //     arr[0] = copy;
 // }
 // console.log('arr',arr);
+
+
+//formula method for left and right rotation:
+// const arr = [5,64,52,31,28,97];
+// console.log('arr',arr);
+// let k = Number(prompt('Enter a number'));
+// let temp = [];
+// for(let i=0;i<arr.length;i++){
+//     temp[i] = arr[(i+k)%arr.length];
+// }
+// console.log('temp',temp);
+
+
+// const arr = [5,64,52,31,28,97];
+// console.log('arr',arr);
+// let k = Number(prompt('Enter a number'));
+// let temp = [];
+// for(let i=0;i<arr.length;i++){
+//     temp[(i+k)%arr.length] = arr[i];
+// }
+// console.log('temp',temp);
