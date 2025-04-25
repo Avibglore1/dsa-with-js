@@ -524,21 +524,67 @@
 
 
 // mostrepeatednumber in array
-const arr = [2,2,1,1,1,2,2];
+// const arr = [2,2,1,1,1,2,2];
 
-let item =arr[0],count=1;
-for(let i=1;i<arr.length;i++){
-if(count === 0){
-    item = arr[i];
-    count = 1
-}else if(arr[i] === item) count++;
-else count--
-}
+// let item =arr[0],count=1;
+// for(let i=1;i<arr.length;i++){
+// if(count === 0){
+//     item = arr[i];
+//     count = 1
+// }else if(arr[i] === item) count++;
+// else count--
+// }
 
-if(count>0){
-    console.log('maximum repeated value:',item);
-}
+// if(count>0){
+//     console.log('maximum repeated value:',item);
+// }
 
 // console.log('count',count);
 // console.log('item',item);
 
+/*******************************revision********************************** */
+
+// leftRotatioBy1element
+// const arr = [5,84,56,5,23] //[84,56,5,23,5]
+// let copy = arr[0];
+// for(let i=0;i<arr.length-1;i++){
+//     arr[i] = arr[i+1];
+// }
+// arr[arr.length-1] = copy;
+// console.log('arr',arr);
+
+// rightrotationBy1element:
+// const arr = [85,45,70,74,25,63]; //[63,85,45,70,74,25]
+// let copy = arr[arr.length-1];
+// for(let i=arr.length-1;i>0;i--){
+//     arr[i] = arr[i-1];
+// }
+// arr[0] = copy;
+// console.log('arr',arr);
+
+// leftrotationbykelement
+// const arr=[52,41,63,74,85];//[41,63,74,85,52]=>[63,74,85,52,41]=>[74,85,52,41,63]=>[85,52,41,63,74]
+// let k = Number(prompt('Enter a number'));
+// k = k%arr.length;
+// for(let j=0;j<k;j++){
+//     let copy = arr[0];
+// for(let i=0;i<arr.length-1;i++){
+//     arr[i] = arr[i+1];
+// }
+// arr[arr.length-1] = copy;
+// }
+// console.log('arr',arr);
+
+
+// right rotation by k element
+// const arr=[52,41,63,74,85]; //[85,52,41,63,74] =>[74,85,52,41,63]=>[63,74,85,52,41]=>[41,63,74,85,52,41]
+// let k = Number(prompt('Enter a number'));
+// k = k%arr.length;
+// for(let j=0;j<k;j++){
+//     let copy = arr[arr.length-1];
+//     for(let i=arr.length-1;i>0;i--){
+//         arr[i] = arr[i-1]
+//     }
+//     arr[0] = copy;
+// }
+// console.log('arr',arr);

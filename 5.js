@@ -121,20 +121,20 @@
 // console.log('toggledWord',toggledWord);
 
 // count character in word:
-let word = "Avinahsh";
+// let word = "Avinahsh";
 
-let frequency = {};
-let chars = [];
-for(let i=0;i<word.length;i++){
-    if(frequency[word[i]]) frequency[word[i]] ++;
-    else {
-        frequency[word[i]] = 1; //countofeachChar
-        chars.push(word[i])//uniquecharacterremoving duplicates
-    }
-}
+// let frequency = {};
+// let chars = [];
+// for(let i=0;i<word.length;i++){
+//     if(frequency[word[i]]) frequency[word[i]] ++;
+//     else {
+//         frequency[word[i]] = 1; //countofeachChar
+//         chars.push(word[i])//uniquecharacterremoving duplicates
+//     }
+// }
 
-console.log('frequency',frequency);
-console.log('chars',chars);
+// console.log('frequency',frequency);
+// console.log('chars',chars);
 
 
 //this already has with O(n) space complexity and time complexity,its a good approach
