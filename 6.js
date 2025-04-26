@@ -656,14 +656,36 @@
 // console.log('arr',arr);
 
 // remove duplicates from array
-const arr = [1,2,5,5,8,9,9];
-console.log('arr',arr);
+// const arr = [1,2,5,5,8,9,9];
+// console.log('arr',arr);
 
-let j=0;
-for(let i=1;i<arr.length;i++){
-    if(arr[i]!==arr[j]){
-       j++;
-       arr[j] = arr[i]
+// let j=0;
+// for(let i=1;i<arr.length;i++){
+//     if(arr[i]!==arr[j]){
+//        j++;
+//        arr[j] = arr[i]
+//     }
+// }
+// console.log('arr',arr.slice(0,j+1));
+
+
+// mergeSortedArray
+const arr1 =[1,2,5,8,9];
+const arr2 = [2,5,8,11,36];
+
+let i=j=k=0;
+let temp=[];
+while(i<arr1.length && j<arr2.length){
+    if(arr1[i]<arr2[j]){
+        temp[k++] = arr1[i++]
+    }else{
+        temp[k++] = arr2[j++]
     }
 }
-console.log('arr',arr.slice(0,j+1));
+while(i<arr1.length){
+    temp[k++] = arr1[i++]
+}
+while(j<arr2.length){
+    temp[k++] = arr2[j++];
+}
+console.log('temp',temp);
