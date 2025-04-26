@@ -736,13 +736,32 @@
 
 
 // maximum sum in a subarray
-const arr = [-2,1,-3,4,-1,2,1,-5,4];
-let sum=0;
-let maxSum = -Infinity;
+// const arr = [-2,1,-3,4,-1,2,1,-5,4];
+// let sum=0;
+// let maxSum = -Infinity;
 
-for(let i=0;i<arr.length;i++){
-    sum +=arr[i];
-    if(sum>maxSum) maxSum = sum;
-     if(sum<0) sum = 0;
+// for(let i=0;i<arr.length;i++){
+//     sum +=arr[i];
+//     if(sum>maxSum) maxSum = sum;
+//      if(sum<0) sum = 0;
+// }
+// console.log('maxSum',maxSum);
+
+
+//  Boyer-Moore Majority Vote Algorithm :
+const arr = [2,2,1,2,1,2,2,1];
+let item = arr[0];
+let count = 1;
+for(let i=1;i<arr.length;i++){
+    if(count ===0){
+        item = arr[i];
+        count = 1;
+    }else if(arr[i] === item){
+        count++
+    }else{
+        count--
+    }
 }
-console.log('maxSum',maxSum);
+
+if(count>0) console.log(item);
+
