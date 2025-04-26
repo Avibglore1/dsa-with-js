@@ -715,3 +715,34 @@
 // }
 
 // console.log('arr',arr);
+
+
+//  Best Time to Buy and Sell Stock:
+
+// const arr = [7,1,5,3,6,4];
+// let minPrice = Infinity;
+// let maxprofit = 0;
+
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]<minPrice){
+//         minPrice=arr[i];
+//     }
+//   if(arr[i]-minPrice>maxprofit){
+//     maxprofit = arr[i]-minPrice;
+// }
+// }
+// console.log('maxProfit',maxprofit);
+
+
+
+// maximum sum in a subarray
+const arr = [-2,1,-3,4,-1,2,1,-5,4];
+let sum=0;
+let maxSum = -Infinity;
+
+for(let i=0;i<arr.length;i++){
+    sum +=arr[i];
+    if(sum>maxSum) maxSum = sum;
+     if(sum<0) sum = 0;
+}
+console.log('maxSum',maxSum);
