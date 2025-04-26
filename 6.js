@@ -670,22 +670,48 @@
 
 
 // mergeSortedArray
-const arr1 =[1,2,5,8,9];
-const arr2 = [2,5,8,11,36];
+// const arr1 =[1,2,5,8,9];
+// const arr2 = [2,5,8,11,36];
 
-let i=j=k=0;
-let temp=[];
-while(i<arr1.length && j<arr2.length){
-    if(arr1[i]<arr2[j]){
-        temp[k++] = arr1[i++]
-    }else{
-        temp[k++] = arr2[j++]
-    }
-}
-while(i<arr1.length){
-    temp[k++] = arr1[i++]
-}
-while(j<arr2.length){
-    temp[k++] = arr2[j++];
-}
-console.log('temp',temp);
+// let i=j=k=0;
+// let temp=[];
+// while(i<arr1.length && j<arr2.length){
+//     if(arr1[i]<arr2[j]){
+//         temp[k++] = arr1[i++]
+//     }else{
+//         temp[k++] = arr2[j++]
+//     }
+// }
+// while(i<arr1.length){
+//     temp[k++] = arr1[i++]
+// }
+// while(j<arr2.length){
+//     temp[k++] = arr2[j++];
+// }
+// console.log('temp',temp);
+
+
+// sort color:
+// const arr = [0,1,0,2,2,1,0,1,2];
+// let j=0;
+// let i=1;
+// let k = arr.length-1;
+// let temp;
+// while(i<=k){
+// if(arr[i]===0){
+//     temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     j++;
+//     i++;
+// }else if(arr[i]===2){
+//     temp = arr[i];
+//     arr[i] = arr[k];
+//     arr[k] = temp;
+//     k--
+// }else{
+//     i++
+// }
+// }
+
+// console.log('arr',arr);
