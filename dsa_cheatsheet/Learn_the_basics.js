@@ -45,16 +45,32 @@
 // Return the GCD of the two numbers.
 // The Greatest Common Divisor (GCD) of two integers is the largest positive integer that divides both of the integers.
 
-let n1 = Number(prompt('Enter a number'));
-let n2 = Number(prompt("Enter a second number"));
-let temp;
-while(n2>0){
-temp = n2;
-n2 = n1%n2;
-n1 = temp;
-}
-console.log('gcd',n1);
+// let n1 = Number(prompt('Enter a number'));
+// let n2 = Number(prompt("Enter a second number"));
+// let temp;
+// while(n2>0){
+// temp = n2;
+// n2 = n1%n2;
+// n1 = temp;
+// }
+// console.log('gcd',n1);
 
+
+// 5.Check if the Number is Armstrong
+// You are given an integer n. You need to check whether it is an armstrong number or not. Return true if it is an armstrong number, otherwise return false.
+// An armstrong number is a number which is equal to the sum of the digits of the number, raised to the power of the number of digits.
+
+
+let n = 153;
+let temp=n,r,sum=0,digits;
+digits = String(n).length;
+while(n>0){
+    r = n%10;
+    sum +=Math.pow(r,digits);
+    n = Math.floor(n/10);
+}
+if(sum===temp) console.log('Armstrong Number');
+else console.log('Not a armstrong number');
 
 
 
