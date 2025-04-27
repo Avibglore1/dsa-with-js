@@ -749,19 +749,19 @@
 
 
 //  Boyer-Moore Majority Vote Algorithm :
-const arr = [2,2,1,2,1,2,2,1];
-let item = arr[0];
-let count = 1;
-for(let i=1;i<arr.length;i++){
-    if(count ===0){
-        item = arr[i];
-        count = 1;
-    }else if(arr[i] === item){
-        count++
-    }else{
-        count--
-    }
-}
+// const arr = [2,2,1,2,1,2,2,1];
+// let item = arr[0];
+// let count = 1;
+// for(let i=1;i<arr.length;i++){
+//     if(count ===0){
+//         item = arr[i];
+//         count = 1;
+//     }else if(arr[i] === item){
+//         count++
+//     }else{
+//         count--
+//     }
+// }
 
-if(count>0) console.log(item);
+// if(count>0) console.log(item);
 
