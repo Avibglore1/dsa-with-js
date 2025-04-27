@@ -26,18 +26,37 @@
 // Given an integer x, return true if x is a palindrome, and false otherwise.
 //  solve it without converting the integer to a string
 
-let n = Number(prompt('Enter a number'));
-let r,rev=0,temp=n;
-if(n<0) console.log('Not a palindrome');
-else{
-    while(n>0){
-        r = n%10;
-        rev= rev*10 + r;
-        n = Math.floor(n/10);
-    }
-    if(rev===temp) console.log('A palindrome number');
-    else console.log('Not a palindrome');
+// let n = Number(prompt('Enter a number'));
+// let r,rev=0,temp=n;
+// if(n<0) console.log('Not a palindrome');
+// else{
+//     while(n>0){
+//         r = n%10;
+//         rev= rev*10 + r;
+//         n = Math.floor(n/10);
+//     }
+//     if(rev===temp) console.log('A palindrome number');
+//     else console.log('Not a palindrome');
+// }
+
+
+// 4.GCD of Two Numbers
+// You are given two integers n1 and n2. You need find the Greatest Common Divisor (GCD) of the two given numbers. 
+// Return the GCD of the two numbers.
+// The Greatest Common Divisor (GCD) of two integers is the largest positive integer that divides both of the integers.
+
+let n1 = Number(prompt('Enter a number'));
+let n2 = Number(prompt("Enter a second number"));
+let temp;
+while(n2>0){
+temp = n2;
+n2 = n1%n2;
+n1 = temp;
 }
+console.log('gcd',n1);
+
+
+
 
  
 
