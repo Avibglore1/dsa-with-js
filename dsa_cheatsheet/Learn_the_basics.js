@@ -18,6 +18,7 @@ let isNegative = n<0;
 n = Math.abs(n);
 let reverse = Number(String(n).split('').reverse().join(''));
 if(reverse > Math.pow(2,31)-1) console.log(0);
-else reverse = isNegative ? -reverse : reverse;
+else {reverse = isNegative ? -reverse : reverse;
 console.log('reverse',reverse);
 
+}
