@@ -61,16 +61,34 @@
 // An armstrong number is a number which is equal to the sum of the digits of the number, raised to the power of the number of digits.
 
 
-let n = 153;
-let temp=n,r,sum=0,digits;
-digits = String(n).length;
-while(n>0){
-    r = n%10;
-    sum +=Math.pow(r,digits);
-    n = Math.floor(n/10);
+// let n = 153;
+// let temp=n,r,sum=0,digits;
+// digits = String(n).length;
+// while(n>0){
+//     r = n%10;
+//     sum +=Math.pow(r,digits);
+//     n = Math.floor(n/10);
+// }
+// if(sum===temp) console.log('Armstrong Number');
+// else console.log('Not a armstrong number');
+
+
+// 6. Divisors of a Number
+// You are given an integer n. You need to find all the divisors of n. Return all the divisors of n as an array or list in a sorted order.
+
+
+const n = 96,arr=[];
+for(let i=1;i<=Math.sqrt(n);i++){
+    if(n%i===0){
+        arr.push(i);
+        if(i!==n/i){
+            arr.push(n/i);
+        }
+    }
 }
-if(sum===temp) console.log('Armstrong Number');
-else console.log('Not a armstrong number');
+arr.sort((a,b)=>a-b);
+console.log('arr',arr);
+
 
 
 
