@@ -53,19 +53,37 @@
 
 
 // rightrotatewithO(1)complexity:
-const arr = [9,85,65,12,42];
-reverse(0,arr.length-1);
-reverse(1,arr.length-1)
-function reverse(i,j){
-     while(i<j){
+// const arr = [9,85,65,12,42];
+// reverse(0,arr.length-1);
+// reverse(1,arr.length-1)
+// function reverse(i,j){
+//      while(i<j){
+//           temp = arr[i];
+//           arr[i] = arr[j];
+//           arr[j] = temp;
+//           i++;
+//           j--
+//      }
+// }
+
+// console.log('arr',arr);
+
+
+// movezerostorightend:
+
+const arr = [1,3,12] 
+let j=0,temp;
+for(let i=0;i<arr.length;i++){
+     if(arr[i]!==0){
           temp = arr[i];
           arr[i] = arr[j];
           arr[j] = temp;
-          i++;
-          j--
+          j++;
      }
 }
 
 console.log('arr',arr);
+
+
 
 
