@@ -110,15 +110,32 @@
 
 /*********************************revision****************** */
 
-let n=Number(prompt('Enter a number'));
-if(n===0) console.log('digits',1)
-let count=0;
-n=Math.abs(n);
+// countdigitsofanumber:
+// let n=Number(prompt('Enter a number'));
+// if(n===0) console.log('digits',1)
+// let count=0;
+// n=Math.abs(n);
+// while(n>0){
+//     count++;
+//     n=Math.floor(n/10);
+// }
+// console.log('digits',count);
+
+
+// reverseInteger:
+let n = -546;
+let rev=0,r;
+const isPositive = n>0;
+n = Math.abs(n);
 while(n>0){
-    count++;
-    n=Math.floor(n/10);
+    r = n%10;
+    rev =rev*10 + r;
+    n = Math.floor(n/10);
 }
-console.log('digits',count);
+if(rev>Math.pow(2,31)-1) console.log(0);
+rev = isPositive ? rev : -rev;
+console.log('reverse',rev);
+
 
 
 
