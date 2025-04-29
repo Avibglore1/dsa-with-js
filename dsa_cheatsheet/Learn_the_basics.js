@@ -138,22 +138,30 @@
 
 
 // Palindrome:
-let x = -121;
-if(x===0) console.log('Palindrome');
-else if(x<0) console.log('Not a Palindrome');
-else{
-        x = Math.abs(x);
-    let r,rev=0,temp=x;
-    while(x>0){
-        r = x % 10;
-        rev = rev*10+r;
-        x = Math.floor(x/10);
-    }
-    if(rev===temp) console.log('palindrome');
-    else console.log('Not a palindrome');
+// let x = -121;
+// if(x===0) console.log('Palindrome');
+// else if(x<0) console.log('Not a Palindrome');
+// else{
+//         x = Math.abs(x);
+//     let r,rev=0,temp=x;
+//     while(x>0){
+//         r = x % 10;
+//         rev = rev*10+r;
+//         x = Math.floor(x/10);
+//     }
+//     if(rev===temp) console.log('palindrome');
+//     else console.log('Not a palindrome');
+// }
+
+
+// GCD
+let n1=8,n2=14,temp;
+while(n2>0){
+temp = n2;
+n2 = n1%n2;
+n1 = temp;
 }
-
-
+console.log('gcd',n1);
 
 
 
