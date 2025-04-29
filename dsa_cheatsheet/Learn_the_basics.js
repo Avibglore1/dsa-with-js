@@ -155,14 +155,26 @@
 
 
 // GCD
-let n1=8,n2=14,temp;
-while(n2>0){
-temp = n2;
-n2 = n1%n2;
-n1 = temp;
-}
-console.log('gcd',n1);
+// let n1=8,n2=14,temp;
+// while(n2>0){
+// temp = n2;
+// n2 = n1%n2;
+// n1 = temp;
+// }
+// console.log('gcd',n1);
 
+
+// ArmstrongNumber:
+let n = 145;
+let temp=n,sum=0,r;
+let digits = String(n).length;
+while(n>0){
+    r = n%10;
+    sum += Math.pow(r,digits);
+    n = Math.floor(n/10);
+}
+if(sum===temp)console.log('Armstrong Number');
+else console.log('Not a armstrong number');
 
 
 
