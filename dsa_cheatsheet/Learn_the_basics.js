@@ -123,18 +123,37 @@
 
 
 // reverseInteger:
-let n = -546;
-let rev=0,r;
-const isPositive = n>0;
-n = Math.abs(n);
-while(n>0){
-    r = n%10;
-    rev =rev*10 + r;
-    n = Math.floor(n/10);
+// let n = -546;
+// let rev=0,r;
+// const isPositive = n>0;
+// n = Math.abs(n);
+// while(n>0){
+//     r = n%10;
+//     rev =rev*10 + r;
+//     n = Math.floor(n/10);
+// }
+// if(rev>Math.pow(2,31)-1) console.log(0);
+// rev = isPositive ? rev : -rev;
+// console.log('reverse',rev);
+
+
+// Palindrome:
+let x = -121;
+if(x===0) console.log('Palindrome');
+else if(x<0) console.log('Not a Palindrome');
+else{
+        x = Math.abs(x);
+    let r,rev=0,temp=x;
+    while(x>0){
+        r = x % 10;
+        rev = rev*10+r;
+        x = Math.floor(x/10);
+    }
+    if(rev===temp) console.log('palindrome');
+    else console.log('Not a palindrome');
 }
-if(rev>Math.pow(2,31)-1) console.log(0);
-rev = isPositive ? rev : -rev;
-console.log('reverse',rev);
+
+
 
 
 
