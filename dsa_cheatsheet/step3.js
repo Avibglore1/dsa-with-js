@@ -40,14 +40,32 @@
 
 
 // uniqueElementinfront:
-const nums = [0,1,2,2,3,4,4];
-let j=0,temp;
-for(let i=1;i<nums.length;i++){
-     if(nums[i]!==nums[j]){
-          j++
-         nums[j] = nums[i]; 
+// const nums = [0,1,2,2,3,4,4];
+// let j=0,temp;
+// for(let i=1;i<nums.length;i++){
+//      if(nums[i]!==nums[j]){
+//           j++
+//          nums[j] = nums[i]; 
+//      }
+// }
+// console.log('unquie elements', j+1);
+// console.log('arr',nums);
+
+
+// rightrotatewithO(1)complexity:
+const arr = [9,85,65,12,42];
+reverse(0,arr.length-1);
+reverse(1,arr.length-1)
+function reverse(i,j){
+     while(i<j){
+          temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+          i++;
+          j--
      }
 }
-console.log('unquie elements', j+1);
-console.log('arr',nums);
+
+console.log('arr',arr);
+
 
