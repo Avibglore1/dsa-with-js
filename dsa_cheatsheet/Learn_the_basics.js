@@ -178,18 +178,31 @@
 
 
 // factorsofanumber:
-let n=98;
-let arr=[];
-for(let i=1;i<=Math.sqrt(n);i++){
+// let n=98;
+// let arr=[];
+// for(let i=1;i<=Math.sqrt(n);i++){
+//     if(n%i===0){
+//         arr.push(i);
+//         if(i!==n/i){
+//             arr.push(n/i);
+//         }
+//     }
+// }
+// arr.sort((a,b)=>a-b);
+// console.log('sortedArray',arr);
+
+// primeNumber:
+let n=23;
+if(n<=1) console.log('Not a prime');
+let count=0;
+for(let i=2;i<=Math.sqrt(n);i++){
     if(n%i===0){
-        arr.push(i);
-        if(i!==n/i){
-            arr.push(n/i);
-        }
+        count++;
+        if(i!==n/i) count++;
     }
 }
-arr.sort((a,b)=>a-b);
-console.log('sortedArray',arr);
+if(count===0) console.log('Prime number');
+else console.log('Not a Prime Number');
 
 
 
