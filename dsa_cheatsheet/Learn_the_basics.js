@@ -165,17 +165,31 @@
 
 
 // ArmstrongNumber:
-let n = 145;
-let temp=n,sum=0,r;
-let digits = String(n).length;
-while(n>0){
-    r = n%10;
-    sum += Math.pow(r,digits);
-    n = Math.floor(n/10);
-}
-if(sum===temp)console.log('Armstrong Number');
-else console.log('Not a armstrong number');
+// let n = 145;
+// let temp=n,sum=0,r;
+// let digits = String(n).length;
+// while(n>0){
+//     r = n%10;
+//     sum += Math.pow(r,digits);
+//     n = Math.floor(n/10);
+// }
+// if(sum===temp)console.log('Armstrong Number');
+// else console.log('Not a armstrong number');
 
+
+// factorsofanumber:
+let n=98;
+let arr=[];
+for(let i=1;i<=Math.sqrt(n);i++){
+    if(n%i===0){
+        arr.push(i);
+        if(i!==n/i){
+            arr.push(n/i);
+        }
+    }
+}
+arr.sort((a,b)=>a-b);
+console.log('sortedArray',arr);
 
 
 
