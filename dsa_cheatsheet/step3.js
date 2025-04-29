@@ -71,19 +71,42 @@
 
 // movezerostorightend:
 
-const arr = [1,3,12] 
-let j=0,temp;
-for(let i=0;i<arr.length;i++){
-     if(arr[i]!==0){
-          temp = arr[i];
-          arr[i] = arr[j];
-          arr[j] = temp;
-          j++;
-     }
+// const arr = [1,3,12] 
+// let j=0,temp;
+// for(let i=0;i<arr.length;i++){
+//      if(arr[i]!==0){
+//           temp = arr[i];
+//           arr[i] = arr[j];
+//           arr[j] = temp;
+//           j++;
+//      }
+// }
+
+// console.log('arr',arr);
+
+
+
+// MissingNumber:
+// let nums = [9,6,4,2,3,5,7,0,1];
+// let length = nums.length;
+// nums.sort((a,b)=>a-b)
+// for(let i=0;i<=length;i++){
+//      if(i!==nums[i]) {
+//           console.log(i);
+//           break;
+//      } 
+// }
+
+// above solution has time complexity of nlogn;
+
+let nums = [9,6,4,2,3,5,7,0,1];
+let length = nums.length;
+let expectedSum,actualSum=0;
+expectedSum = length * (length+1)/2;
+console.log('expectedSum',expectedSum);
+
+for(let i=0;i<length;i++){
+     actualSum += nums[i];
 }
-
-console.log('arr',arr);
-
-
-
+console.log('missingNumber',expectedSum-actualSum);
 
