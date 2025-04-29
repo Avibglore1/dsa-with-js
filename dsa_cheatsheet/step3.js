@@ -27,15 +27,27 @@
 
 
 // initiallysortedandrotated:
-const arr = [1,2,3];
-let count=0;
+// const arr = [1,2,3];
+// let count=0;
 
-for(let i=0;i<arr.length;i++){
-     if(arr[i]<arr[(i+1)%arr.length]){
-          count++;
+// for(let i=0;i<arr.length;i++){
+//      if(arr[i]<arr[(i+1)%arr.length]){
+//           count++;
+//      }
+// }
+// if(count<=1) console.log(true);
+// else console.log(false);
+
+
+// uniqueElementinfront:
+const nums = [0,1,2,2,3,4,4];
+let j=0,temp;
+for(let i=1;i<nums.length;i++){
+     if(nums[i]!==nums[j]){
+          j++
+         nums[j] = nums[i]; 
      }
 }
-if(count<=1) console.log(true);
-else console.log(false);
-
+console.log('unquie elements', j+1);
+console.log('arr',nums);
 
