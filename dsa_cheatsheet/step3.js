@@ -112,20 +112,28 @@
 
 
 // maximumconsecutiveones:
-const nums = [1,1,0,1,1,1]
-let maxCount=0;
-let count=0;
+// const nums = [1,1,0,1,1,1]
+// let maxCount=0;
+// let count=0;
+// for(let i=0;i<nums.length;i++){
+//      if(nums[i]===1){
+//           count++;
+//      }else{
+//           if(count>maxCount){
+//                maxCount = count;
+//           }
+//           count=0;
+//      }
+// }
+// maxCount = count>maxCount ? count : maxCount;
+// console.log('maximumconsecutiveones',maxCount);
+
+
+// single against double:
+let result = 0;
+let nums = [4,0,2,1,0,2,1];
+
 for(let i=0;i<nums.length;i++){
-     if(nums[i]===1){
-          count++;
-     }else{
-          if(count>maxCount){
-               maxCount = count;
-          }
-          count=0;
-     }
+     result = result ^ nums[i]
 }
-maxCount = count>maxCount ? count : maxCount;
-console.log('maximumconsecutiveones',maxCount);
-
-
+console.log(result);
