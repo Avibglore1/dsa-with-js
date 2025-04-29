@@ -93,21 +93,32 @@
 // 7.Check for Prime Number
 // You are given an integer n. You need to check if the number is prime or not. Return true if it is a prime number, otherwise return false.
 
-const n=91;
-let isPrime = true;
-if(n<=1) isPrime=false;
-else{
-    for(let i=2;i<=Math.sqrt(n);i++){
-        if(n%i===0){
-            isPrime = false;
-            break;
-        }
-    }
+// const n=91;
+// let isPrime = true;
+// if(n<=1) isPrime=false;
+// else{
+//     for(let i=2;i<=Math.sqrt(n);i++){
+//         if(n%i===0){
+//             isPrime = false;
+//             break;
+//         }
+//     }
     
-    console.log(isPrime ?'prime number':'Not a prime Number');    
+//     console.log(isPrime ?'prime number':'Not a prime Number');    
+// }
+
+
+/*********************************revision****************** */
+
+let n=Number(prompt('Enter a number'));
+if(n===0) console.log('digits',1)
+let count=0;
+n=Math.abs(n);
+while(n>0){
+    count++;
+    n=Math.floor(n/10);
 }
-
-
+console.log('digits',count);
 
 
 
