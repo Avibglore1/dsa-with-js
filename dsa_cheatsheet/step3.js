@@ -99,14 +99,33 @@
 
 // above solution has time complexity of nlogn;
 
-let nums = [9,6,4,2,3,5,7,0,1];
-let length = nums.length;
-let expectedSum,actualSum=0;
-expectedSum = length * (length+1)/2;
-console.log('expectedSum',expectedSum);
+// let nums = [9,6,4,2,3,5,7,0,1];
+// let length = nums.length;
+// let expectedSum,actualSum=0;
+// expectedSum = length * (length+1)/2;
+// console.log('expectedSum',expectedSum);
 
-for(let i=0;i<length;i++){
-     actualSum += nums[i];
+// for(let i=0;i<length;i++){
+//      actualSum += nums[i];
+// }
+// console.log('missingNumber',expectedSum-actualSum);
+
+
+// maximumconsecutiveones:
+const nums = [1,1,0,1,1,1]
+let maxCount=0;
+let count=0;
+for(let i=0;i<nums.length;i++){
+     if(nums[i]===1){
+          count++;
+     }else{
+          if(count>maxCount){
+               maxCount = count;
+          }
+          count=0;
+     }
 }
-console.log('missingNumber',expectedSum-actualSum);
+maxCount = count>maxCount ? count : maxCount;
+console.log('maximumconsecutiveones',maxCount);
+
 
