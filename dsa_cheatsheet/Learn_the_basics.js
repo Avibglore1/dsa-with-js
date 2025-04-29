@@ -192,17 +192,17 @@
 // console.log('sortedArray',arr);
 
 // primeNumber:
-let n=23;
-if(n<=1) console.log('Not a prime');
-let count=0;
-for(let i=2;i<=Math.sqrt(n);i++){
-    if(n%i===0){
-        count++;
-        if(i!==n/i) count++;
-    }
-}
-if(count===0) console.log('Prime number');
-else console.log('Not a Prime Number');
+// let n=23;
+// if(n<=1) console.log('Not a prime');
+// let count=0;
+// for(let i=2;i<=Math.sqrt(n);i++){
+//     if(n%i===0){
+//         count++;
+//         if(i!==n/i) count++;
+//     }
+// }
+// if(count===0) console.log('Prime number');
+// else console.log('Not a Prime Number');
 
 
 
