@@ -41,18 +41,32 @@
 
 
 // leaderInAnArray:
-const nums = [-3, 4, 5, 1, -4, -5];
-let arr = [];
-let maxSoFar = nums[nums.length-1];
-arr.push(maxSoFar);
-for(let i=nums.length-2;i>=0;i--){
-    if(nums[i]>maxSoFar){
-        arr.unshift(nums[i]);
-        maxSoFar = nums[i]
+// const nums = [-3, 4, 5, 1, -4, -5];
+// let arr = [];
+// let maxSoFar = nums[nums.length-1];
+// arr.push(maxSoFar);
+// for(let i=nums.length-2;i>=0;i--){
+//     if(nums[i]>maxSoFar){
+//         arr.unshift(nums[i]);
+//         maxSoFar = nums[i]
+//     }
+// }
+
+// console.log(arr);
+
+
+// Subarray Sum Equals K:
+const nums = [1,2,3];
+let sum,k=3,count=0;
+for(let i=0;i<nums.length;i++){
+    sum=0;
+    for(let j=i;j<nums.length;j++){
+        sum += nums[j];
+        if(sum===k) count++;
     }
 }
+console.log('count',count);
 
-console.log(arr);
 
 
 
