@@ -130,10 +130,13 @@
 
 
 // single against double:
-let result = 0;
-let nums = [4,0,2,1,0,2,1];
+// let result = 0;
+// let nums = [4,0,2,1,0,2,1];
 
-for(let i=0;i<nums.length;i++){
-     result = result ^ nums[i]
-}
-console.log(result);
+// for(let i=0;i<nums.length;i++){
+//      result = result ^ nums[i]
+// }
+// console.log(result);
+
+
+
