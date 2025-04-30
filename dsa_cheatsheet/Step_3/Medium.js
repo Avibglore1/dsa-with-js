@@ -1,18 +1,30 @@
 // Majority Element-I:
 
-const arr = [2,2,1,1,1,2,2];
-let majorityItem = arr[0];
-let count=1;
-for(let i=1;i<arr.length;i++){
-    if(majorityItem === arr[i]){
-        count++;
-    }else{
-        if(count===0){
-            majorityItem = arr[i];
-            count=1;
-        }else{
-            count--;
-        }
-    }
+// const arr = [2,2,1,1,1,2,2];
+// let majorityItem = arr[0];
+// let count=1;
+// for(let i=1;i<arr.length;i++){
+//     if(majorityItem === arr[i]){
+//         count++;
+//     }else{
+//         if(count===0){
+//             majorityItem = arr[i];
+//             count=1;
+//         }else{
+//             count--;
+//         }
+//     }
+// }
+// console.log('majorityItem',majorityItem);
+
+
+// Kadane's Algorithm:
+const nums = [2, 3, 5, -2, 7, -4];
+let sum=0,maxSum=-Infinity;
+for(let i=0;i<nums.length;i++){
+    sum += nums[i];
+    if(sum>maxSum) maxSum = sum;
+    if(sum<0) sum = 0;
 }
-console.log('majorityItem',majorityItem);
+console.log('maxsum',maxSum);
+
