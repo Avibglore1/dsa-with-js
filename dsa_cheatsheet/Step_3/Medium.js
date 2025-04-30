@@ -30,13 +30,31 @@
 
 
 // MaximumProfit:
-const nums = [7,1,5,3,6,4];
-let minPrice = Infinity;
-let MaximumProfit = -Infinity;
-for(let i=0;i<nums.length;i++){
-    if(nums[i]<minPrice) minPrice = nums[i];
-    if(nums[i]-minPrice>MaximumProfit) MaximumProfit = nums[i]-minPrice;
+// const nums = [7,1,5,3,6,4];
+// let minPrice = Infinity;
+// let MaximumProfit = -Infinity;
+// for(let i=0;i<nums.length;i++){
+//     if(nums[i]<minPrice) minPrice = nums[i];
+//     if(nums[i]-minPrice>MaximumProfit) MaximumProfit = nums[i]-minPrice;
+// }
+// console.log('maxProfit', MaximumProfit);
+
+
+// leaderInAnArray:
+const nums = [-3, 4, 5, 1, -4, -5];
+let arr = [];
+let maxSoFar = nums[nums.length-1];
+arr.push(maxSoFar);
+for(let i=nums.length-2;i>=0;i--){
+    if(nums[i]>maxSoFar){
+        arr.unshift(nums[i]);
+        maxSoFar = nums[i]
+    }
 }
-console.log('maxProfit', MaximumProfit);
+
+console.log(arr);
+
+
+
 
 
