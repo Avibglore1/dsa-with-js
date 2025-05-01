@@ -131,13 +131,27 @@
 
 
 // selection-sort:
-let min,index;
+// let min,index;
+// const nums = [3, 1, 1, 5, 2];
+// for(let i=0;i<nums.length;i++){
+//         let arr = nums.slice(i);
+//         min = Math.min(...arr);
+//         index = arr.indexOf(min);
+//         [nums[i],nums[index+i]] = [nums[index+i],nums[i]];
+// }
+// console.log('sortedArray',nums);
+
+
+// insertion-sort:
 const nums = [3, 1, 1, 5, 2];
-for(let i=0;i<nums.length;i++){
-        let arr = nums.slice(i);
-        min = Math.min(...arr);
-        index = arr.indexOf(min);
-        [nums[i],nums[index+i]] = [nums[index+i],nums[i]];
+let key,j;
+for(let i=1;i<nums.length;i++){
+    key = nums[i];
+     j=i-1;
+    while(j>=0 && nums[j]>key){
+        nums[j+1] = nums[j];
+        j--
+    }
+    nums[j+1] = key;
 }
 console.log('sortedArray',nums);
-
