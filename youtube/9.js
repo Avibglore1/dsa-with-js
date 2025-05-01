@@ -116,14 +116,28 @@
 ///**********************revision *////////////////////
 
 // bubble-sort:
-const nums = [2,5,1,15,14];
-console.log('arr',nums);
+// const nums = [2,5,1,15,14];
+// console.log('arr',nums);
 
-for(let i=0;i<nums.length-1;i++){
-    for(let j=0;j<nums.length-i-1;j++){
-        if(nums[j]>nums[j+1]){
-            [nums[j],nums[j+1]] = [nums[j+1],nums[j]];
-        }
-    }
+// for(let i=0;i<nums.length-1;i++){
+//     for(let j=0;j<nums.length-i-1;j++){
+//         if(nums[j]>nums[j+1]){
+//             [nums[j],nums[j+1]] = [nums[j+1],nums[j]];
+//         }
+//     }
+// }
+// console.log('sortedArray',nums);
+
+
+
+// selection-sort:
+let min,index;
+const nums = [3, 1, 1, 5, 2];
+for(let i=0;i<nums.length;i++){
+        let arr = nums.slice(i);
+        min = Math.min(...arr);
+        index = arr.indexOf(min);
+        [nums[i],nums[index+i]] = [nums[index+i],nums[i]];
 }
 console.log('sortedArray',nums);
+
