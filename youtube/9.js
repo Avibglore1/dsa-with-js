@@ -110,3 +110,20 @@
 // }
 
 // console.log('sortedArr',arr);
+
+
+
+///**********************revision *////////////////////
+
+// bubble-sort:
+const nums = [2,5,1,15,14];
+console.log('arr',nums);
+
+for(let i=0;i<nums.length-1;i++){
+    for(let j=0;j<nums.length-i-1;j++){
+        if(nums[j]>nums[j+1]){
+            [nums[j],nums[j+1]] = [nums[j+1],nums[j]];
+        }
+    }
+}
+console.log('sortedArray',nums);
