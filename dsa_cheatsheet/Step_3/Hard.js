@@ -14,7 +14,6 @@ for(let i=1;i<nums.length;i++){
     }
     currentMax = Math.max(num,currentMax * num);
     currentMin = Math.min(num,currentMin * num);
-
     maxProduct = Math.max(maxProduct,currentMax);
 }
 console.log('maxProduct',maxProduct);
