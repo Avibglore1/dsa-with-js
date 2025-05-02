@@ -49,15 +49,27 @@
 // }
 
 
-let n=10;
-let first = 0,second = 1;
-function fn(n,first,second){
-    if(n===0) return ;
-    third = first + second;
-    console.log(third);
-     first = second;
-     second = third,
-     fn(n-1,first,second)
+// let n=10;
+// let first = 0,second = 1;
+// function fn(n,first,second){
+//     if(n===0) return ;
+//     third = first + second;
+//     console.log(third);
+//      first = second;
+//      second = third,
+//      fn(n-1,first,second)
    
+// }
+// fn(n,first,second)
+
+
+// nthterm in fibo:
+let n = 5;
+function fibo(n){
+    if(n===0 || n===1){
+        return n
+    }
+    return fibo(n-1) + fibo(n-2);
 }
-fn(n,first,second)
+
+console.log(fibo(n))
