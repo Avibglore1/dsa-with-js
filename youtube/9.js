@@ -143,15 +143,53 @@
 
 
 // insertion-sort:
-const nums = [3, 1, 1, 5, 2];
-let key,j;
-for(let i=1;i<nums.length;i++){
-    key = nums[i];
-     j=i-1;
-    while(j>=0 && nums[j]>key){
-        nums[j+1] = nums[j];
-        j--
-    }
-    nums[j+1] = key;
-}
-console.log('sortedArray',nums);
+// const nums = [3, 1, 1, 5, 2];
+// let key,j;
+// for(let i=1;i<nums.length;i++){
+//     key = nums[i];
+//      j=i-1;
+//     while(j>=0 && nums[j]>key){
+//         nums[j+1] = nums[j];
+//         j--
+//     }
+//     nums[j+1] = key;
+// }
+// console.log('sortedArray',nums);
+
+
+/****************************revision-2*********************** */
+
+// Bubble-sort:
+// const nums = [2,15,56,74,32,63];
+// for(let i=0;i<nums.length-1;i++){
+//     for(let j=0;j<nums.length-i-1;j++){
+//         if(nums[j]>nums[j+1]) [nums[j],nums[j+1]] = [nums[j+1],nums[j]];
+//     }
+// }
+// console.log('sortedArray',nums);
+
+
+// Selectionsort:
+// const nums = [2,15,56,74,32,63];
+// for(let i=0;i<nums.length;i++){
+//     let slicedArr = nums.slice(i);
+//     let min = Math.min(...slicedArr);
+//     index = slicedArr.indexOf(min);
+//     [nums[i],nums[index+i]] = [nums[index+i],nums[i]];    
+// }
+
+// console.log('sortedArr',nums);
+
+
+// insertionsort:
+// const nums = [2,15,56,74,32,63];
+// for(let i=1;i<nums.length;i++){
+//     let j = i-1;
+//     key = nums[i];
+//     while(j>=0 && nums[j]>key){
+//         nums[j+1] = nums[j];
+//         j--
+//     }
+//     nums[j+1] = key
+// }
+// console.log('sortedArr',nums);
