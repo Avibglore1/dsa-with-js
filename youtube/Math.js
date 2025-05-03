@@ -52,15 +52,28 @@
 
 // print prime upton:
 
-let n = 25;
-let arr = new Array(n+1).fill(true);
-for(let i=2;i<=Math.sqrt(n);i++){
-  if(arr[i]){
-    for(let j = i*i;j<=n;j=j+i){
-      arr[j] = false;
-    }
-  }
+// let n = 25;
+// let arr = new Array(n+1).fill(true);
+// for(let i=2;i<=Math.sqrt(n);i++){
+//   if(arr[i]){
+//     for(let j = i*i;j<=n;j=j+i){
+//       arr[j] = false;
+//     }
+//   }
+// }
+// for(let i=2;i<arr.length;i++){
+//   if(arr[i]) console.log(i);
+// }
+
+
+let x = 2,n=7;
+let isPositive = n>0;
+n = Math.abs(n);
+function pow(x,n){
+if(n===0) return 1;
+let ans = pow(x,Math.floor(n/2));
+if(n% 2===0) return ans * ans;
+else return ans*ans*x;
 }
-for(let i=2;i<arr.length;i++){
-  if(arr[i]) console.log(i);
-}
+ans = pow(x,n)
+isPositive ? console.log(ans) : console.log(1/ans);
