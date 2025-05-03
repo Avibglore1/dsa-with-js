@@ -43,9 +43,24 @@
 
 // most appropriate answer:
 
-let n1 = 32,n2 = 20;
-function fn(a,b){
-if(b===0) return a;
-return fn(b,a%b);
+// let n1 = 32,n2 = 20;
+// function fn(a,b){
+// if(b===0) return a;
+// return fn(b,a%b);
+// }
+// console.log(fn(n1,n2));
+
+// print prime upton:
+
+let n = 25;
+let arr = new Array(n+1).fill(true);
+for(let i=2;i<=Math.sqrt(n);i++){
+  if(arr[i]){
+    for(let j = i*i;j<=n;j=j+i){
+      arr[j] = false;
+    }
+  }
 }
-console.log(fn(n1,n2));
+for(let i=2;i<arr.length;i++){
+  if(arr[i]) console.log(i);
+}
