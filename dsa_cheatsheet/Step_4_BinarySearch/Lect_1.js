@@ -113,25 +113,47 @@
 
     
     // Search in Rotated Sorted Array:
-     const nums = [4,5,6,7,0,1,2];
-    const target = 0;
-    function search(){
-        let left=0,right = nums.length-1,mid;
-        while(left<=right){
-            mid = Math.floor((left+right)/2);
-            if(nums[mid]===target) return mid;
-            if(nums[left]<=nums[mid]){
-                if(nums[left]<=target && target < nums[mid]) right = mid-1;
-                else left = mid+1;
-            }else{
-                if(nums[mid]<target && target<=nums[right]) left=mid+1;
-                else right = mid-1;
-            }
+//      const nums = [4,5,6,7,0,1,2];
+//     const target = 0;
+//     function search(){
+//         let left=0,right = nums.length-1,mid;
+//         while(left<=right){
+//             mid = Math.floor((left+right)/2);
+//             if(nums[mid]===target) return mid;
+//             if(nums[left]<=nums[mid]){
+//                 if(nums[left]<=target && target < nums[mid]) right = mid-1;
+//                 else left = mid+1;
+//             }else{
+//                 if(nums[mid]<target && target<=nums[right]) left=mid+1;
+//                 else right = mid-1;
+//             }
+//         }
+//         return -1;
+//     }
+// console.log(search());
+
+
+// Search in Rotated Sorted Array:with duplicates
+const nums = [2,5,6,0,0,1,2];
+const target = 3;
+  function search_In_Duplicates(){
+    let left = 0,right = nums.length-1,mid;
+    while(left<=right){
+        mid = Math.floor((left+right)/2);
+        if(nums[mid]===target) return true;
+        if(nums[left]===nums[mid] && nums[mid]===nums[right]){
+            left++;
+            right--
+        }else if(nums[left]<=nums[mid]){
+            if(nums[left]<=target && target<nums[mid]) right = mid-1;
+            else left = mid+1;
+        }else{
+            if(nums[mid]<target && target <= nums[right]) left = mid+1;
+            else right = mid-1
         }
-        return -1;
     }
-console.log(search());
+    return false
+  }
 
-
-  
+  console.log(search_In_Duplicates())
 
