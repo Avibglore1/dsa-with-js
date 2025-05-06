@@ -45,3 +45,21 @@
     // }
     // console.log(ans);
 
+
+    // Search insert position:
+    const nums = [8,15,25,56,890];
+    const target = 28;
+    let first=0,last = nums.length-1,mid;
+    let flag = false;
+    while(first<=last){
+        mid = Math.floor((first+last)/2);
+        if(nums[mid]===target) {
+            flag = true;
+            console.log(mid);
+            break;
+        }
+        else if(nums[mid]>target) last = mid-1;
+        else first = mid+1;
+    }
+    if(!flag) console.log(first);
+    
