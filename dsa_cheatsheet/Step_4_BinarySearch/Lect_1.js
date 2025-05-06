@@ -17,16 +17,31 @@
 
 
 // Lower Bound:
-const nums = [8,15,25,56,890];
-const target = 28;
-let first = 0,last = nums.length-1,mid;
-let ans = nums.length;
-while(first<=last){
-    mid = Math.floor((first+last)/2);
-    if(nums[mid]>=target){
-        ans = mid;
-        last = mid-1;
-    }else first = mid+1;
-}
-console.log(ans);
+    // const nums = [8,15,25,56,890];
+    // const target = 28;
+    // let first = 0,last = nums.length-1,mid;
+    // let ans = nums.length;
+    // while(first<=last){
+    //     mid = Math.floor((first+last)/2);
+    //     if(nums[mid]>=target){
+    //         ans = mid;
+    //         last = mid-1;
+    //     }else first = mid+1;
+    // }
+    // console.log(ans);
+
+
+    // Upper Bound:
+    // const nums = [8,15,25,56,890];
+    // const target = 28;
+    // let first = 0,last = nums.length-1,mid;
+    // let ans = nums.length;
+    // while(first<=last){
+    //     mid = Math.floor((first+last)/2);
+    //     if(nums[mid]>target){
+    //         ans = mid;
+    //         last = mid-1;
+    //     }else first = mid+1;
+    // }
+    // console.log(ans);
 
