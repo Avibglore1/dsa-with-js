@@ -65,26 +65,51 @@
     
 
     // Floor and Ceil in Sorted Array:
+    // const nums = [8,15,25,56,890];
+    // const target = 28;
+    // let floor=-1,ceil=-1;
+    // let first=0,last = nums.length-1,mid;
+    // function floorCeil(){
+    //     while(first<=last){
+    //         mid = Math.floor((first+last)/2);
+    //         if(nums[mid]===target) return [target,target];
+    //         else if(nums[mid]>target){
+    //             ceil = nums[mid];
+    //             last = mid-1;
+    //         }else{
+    //             floor = nums[mid];
+    //             first = mid+1;
+    //         }
+    //     }
+    //     return [floor,ceil]
+    // }
+   
+    // const ans = floorCeil();
+    // console.log(ans);
+
+
+    // Find First and Last Position of Element in Sorted Array:
     const nums = [8,15,25,56,890];
     const target = 28;
-    let floor=-1,ceil=-1;
-    let first=0,last = nums.length-1,mid;
-    function floorCeil(){
-        while(first<=last){
-            mid = Math.floor((first+last)/2);
-            if(nums[mid]===target) return [target,target];
-            else if(nums[mid]>target){
-                ceil = nums[mid];
-                last = mid-1;
-            }else{
-                floor = nums[mid];
-                first = mid+1;
+    let firstIndex,lastIndex;
+    function find_index(is_first){
+        let left=0,right=nums.length-1,mid;
+        let result = -1;
+        while(left<=right){
+            mid = Math.floor((left+right)/2);
+            if(nums[mid]===target){
+                result = mid;
+                if(is_first) right=mid-1;
+                else left = mid+1;
             }
+            else if(nums[mid]>target) right = mid-1;
+            else left = mid+1;
         }
-        return [floor,ceil]
+        return result;
     }
-   
-    const ans = floorCeil();
-    console.log(ans);
+    firstIndex = find_index(true);
+    lastIndex = find_index(false);
+    console.log([firstIndex,lastIndex]);
+    
     
 
