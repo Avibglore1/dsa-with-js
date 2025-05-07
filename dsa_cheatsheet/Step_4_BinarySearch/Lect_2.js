@@ -22,18 +22,39 @@
 
 // Kth Missing Positive Number:
 // TimeComplexity:O(n)
-const arr = [1,2,3,4];
-const k=2;
+// const arr = [1,2,3,4];
+// const k=2;
 
-function missing_Number(nums,k){
-let i=0,num=1;
-while(k>0){
-    if(i<nums.length && num===nums[i]) i++;
-    else{
-        k--;
-        if(k===0) return num;
-    }
-    num++;
+// function missing_Number(nums,k){
+// let i=0,num=1;
+// while(k>0){
+//     if(i<nums.length && num===nums[i]) i++;
+//     else{
+//         k--;
+//         if(k===0) return num;
+//     }
+//     num++;
+// }
+// }
+// console.log(missing_Number(arr,k));
+
+
+
+
+// Kth Missing Positive Number:
+// TimeComplexity:O(logn)
+const arr = [2,3,4,7,11];
+const k=5;
+
+function missing_binarySearch(nums,k){
+let left=0,right=nums.length,mid,missing;
+while(left<right){
+    mid = Math.floor((left+right)/2);
+    missing = nums[mid]-(mid+1);
+    if(missing<k) left=mid+1;
+    else right=mid;
 }
+return left+k;
 }
-console.log(missing_Number(arr,k));
+
+console.log(missing_binarySearch(arr,k));
