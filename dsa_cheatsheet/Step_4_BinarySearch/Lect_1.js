@@ -206,15 +206,38 @@
 
 
 // Single Element in a Sorted Array:
-const nums = [1,1,2,3,3,4,4,8,8] //2
-function singleElement(nums){
-let low=0,high = nums.length-1,mid;
-while(low<high){
-mid = Math.floor((low+high)/2);
-if(mid%2===1) mid--;
-if(nums[mid]===nums[mid+1]) low=mid+2;
-else high = mid;
-}
-return nums[low];
-}
-console.log(singleElement(nums));
+// const nums = [1,1,2,3,3,4,4,8,8] //2
+// function singleElement(nums){
+// let low=0,high = nums.length-1,mid;
+// while(low<high){
+// mid = Math.floor((low+high)/2);
+// if(mid%2===1) mid--;
+// if(nums[mid]===nums[mid+1]) low=mid+2;
+// else high = mid;
+// }
+// return nums[low];
+// }
+// console.log(singleElement(nums));
+
+
+//  Find the Smallest Divisor Given a Threshold:
+ const nums = [44,22,33,11,1];
+ const threshold = 5;
+ function smallest_divisor(nums,threshold){
+    let left=1,right=Math.max(...nums),mid;
+    function Sum(divisor){
+        let sum=0;
+        for(let i=0;i<nums.length;i++){
+            sum += Math.ceil(nums[i]/divisor);
+        }
+        return sum
+    }
+    while(left<right){
+        mid = Math.floor((left+right)/2);
+        if(Sum(mid)>threshold) left=mid+1;
+        else right = mid;
+    }
+    return left;
+ }
+ console.log(smallest_divisor(nums,threshold));
+ 
