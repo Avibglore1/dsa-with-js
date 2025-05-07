@@ -191,15 +191,30 @@
 
 
 // Number of rotation=index of smallest element in rotated ascending order array:
-const nums = [4, 5, 6, 7, 0, 1, 2, 3];
-function minimum_Search(){
-let left=0,right=nums.length-1,mid;
-while(left<right){
-    mid = Math.floor((left+right)/2);
-    if(nums[mid]>nums[right]) left = mid+1;
-    else if(nums[mid]<nums[right]) right=mid;
-    else right--
+// const nums = [4, 5, 6, 7, 0, 1, 2, 3];
+// function minimum_Search(){
+// let left=0,right=nums.length-1,mid;
+// while(left<right){
+//     mid = Math.floor((left+right)/2);
+//     if(nums[mid]>nums[right]) left = mid+1;
+//     else if(nums[mid]<nums[right]) right=mid;
+//     else right--
+// }
+// return [left,nums[left]]
+// }
+// console.log(minimum_Search());
+
+
+// Single Element in a Sorted Array:
+const nums = [1,1,2,3,3,4,4,8,8] //2
+function singleElement(nums){
+let low=0,high = nums.length-1,mid;
+while(low<high){
+mid = Math.floor((low+high)/2);
+if(mid%2===1) mid--;
+if(nums[mid]===nums[mid+1]) low=mid+2;
+else high = mid;
 }
-return [left,nums[left]]
+return nums[low];
 }
-console.log(minimum_Search());
+console.log(singleElement(nums));
