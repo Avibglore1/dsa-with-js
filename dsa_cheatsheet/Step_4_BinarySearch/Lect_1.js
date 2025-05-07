@@ -176,7 +176,22 @@
 
 
 // Find Minimum in Rotated Duplicates Sorted Array:
-const nums = [2,2,2,0,1];
+// const nums = [2,2,2,0,1];
+// function minimum_Search(){
+// let left=0,right=nums.length-1,mid;
+// while(left<right){
+//     mid = Math.floor((left+right)/2);
+//     if(nums[mid]>nums[right]) left = mid+1;
+//     else if(nums[mid]<nums[right]) right=mid;
+//     else right--
+// }
+// return nums[left]
+// }
+// console.log(minimum_Search());
+
+
+// Number of rotation=index of smallest element in rotated ascending order array:
+const nums = [4, 5, 6, 7, 0, 1, 2, 3];
 function minimum_Search(){
 let left=0,right=nums.length-1,mid;
 while(left<right){
@@ -185,6 +200,6 @@ while(left<right){
     else if(nums[mid]<nums[right]) right=mid;
     else right--
 }
-return nums[left]
+return [left,nums[left]]
 }
 console.log(minimum_Search());
