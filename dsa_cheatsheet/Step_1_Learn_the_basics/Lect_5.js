@@ -21,16 +21,27 @@
 // }
 // console.log(reverse(arr,0,n-1))
 
-let s='Hannat';
-let sentence = s;
-s=s.split('');
-let start=0,end=s.length-1;
-function palindromeCheck(s,start,end){
-if(start>=end) return s;
-let temp=s[start];
-s[start] = s[end];
-s[end] = temp;
-return palindromeCheck(s,start+1,end-1)
+// let s='Hannat';
+// let sentence = s;
+// s=s.split('');
+// let start=0,end=s.length-1;
+// function palindromeCheck(s,start,end){
+// if(start>=end) return s;
+// let temp=s[start];
+// s[start] = s[end];
+// s[end] = temp;
+// return palindromeCheck(s,start+1,end-1)
+// }
+// const ans = palindromeCheck(s,start,end);
+// console.log(ans.join('').toUpperCase()===sentence.toUpperCase());
+
+
+
+// fibonacci series:
+const n = 5;
+function fib(a){
+if(a===0 || a===1) return a;
+return fib(a-1) + fib(a-2);
 }
-const ans = palindromeCheck(s,start,end);
-console.log(ans.join('').toUpperCase()===sentence.toUpperCase());
+console.log(fib(n));
+
