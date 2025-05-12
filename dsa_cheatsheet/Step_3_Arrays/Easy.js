@@ -139,4 +139,52 @@
 // console.log(result);
 
 
+/*****************revision********** */
 
+// const nums =  [3, 4, 1, 5, 3, -5];
+// k=8;
+//  k = k%nums.length;
+//         reverse(0,k-1);
+//         reverse(k,nums.length-1);
+//         reverse(0,nums.length-1);
+//         function reverse(i,j){
+//             while(i<j){
+//                 let temp = nums[i];
+//                 nums[i] = nums[j];
+//                 nums[j] = temp;
+//                 i++;
+//                 j--;
+//             }
+         
+//         }
+// console.log(nums);
+
+
+// union of two arrays:
+const nums1 =  [1, 2, 3, 4, 5];
+const nums2 = [1, 2, 7];
+function unionArray(nums1, nums2) {
+        let temp=[];
+        let i=0,j=0,k=0;
+        while(i<nums1.length && j<nums2.length){
+            if(nums1[i]<nums2[j]) {
+                if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];   
+            }
+            else if(nums1[i]===nums2[j]){
+                 if(k===0 || temp[k-1]!==nums2[j]) temp[k++] = nums2[i++];   
+                 j++;
+            }
+            else{
+                if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[j++]; 
+                i++;
+            }
+        }
+        while(i<nums1.length){
+            if(temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];
+            
+        }while(j<nums2.length){
+           if(temp[k-1]!==nums2[j]) temp[k++] = nums2[j++];
+        }
+         return temp
+    }
+console.log(unionArray(nums1, nums2))
