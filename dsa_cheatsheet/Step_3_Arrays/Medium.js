@@ -85,25 +85,40 @@
 
 
 // 75. Sort Colors:
-const nums= [2,0,2,1,1,0];
-let i=0,j=0,k=nums.length-1,temp;
-while(i<=k){
-    if(nums[i]===0){
-        temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
-        i++;
-        j++;
-    }
-    else if(nums[i]===2){
-        temp=nums[i];
-        nums[i]=nums[k];
-        nums[k]=temp;
-        k--;
-    }
-    else i++;
+// const nums= [2,0,2,1,1,0];
+// let i=0,j=0,k=nums.length-1,temp;
+// while(i<=k){
+//     if(nums[i]===0){
+//         temp=nums[i];
+//         nums[i]=nums[j];
+//         nums[j]=temp;
+//         i++;
+//         j++;
+//     }
+//     else if(nums[i]===2){
+//         temp=nums[i];
+//         nums[i]=nums[k];
+//         nums[k]=temp;
+//         k--;
+//     }
+//     else i++;
+// }
+// console.log(nums);
+
+
+// 169. Majority Element:
+
+const nums=[1,1,3,1,2,6,1,1,5,8,4,1,1];
+let frequencyCount={};
+let majorityCount=Math.floor(nums.length/2);
+for(let i=0;i<nums.length;i++){
+    if(frequencyCount[nums[i]]) frequencyCount[nums[i]] ++;
+    else frequencyCount[nums[i]] = 1;
+    if(frequencyCount[nums[i]]>majorityCount) {
+        console.log(nums[i]);
+        break;        
+    };
 }
-console.log(nums);
 
 
 
