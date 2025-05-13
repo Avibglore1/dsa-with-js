@@ -56,16 +56,32 @@
 
 
 // Subarray Sum Equals K:
-const nums = [1,2,3];
-let sum,k=3,count=0;
+// const nums = [1,2,3];
+// let sum,k=3,count=0;
+// for(let i=0;i<nums.length;i++){
+//     sum=0;
+//     for(let j=i;j<nums.length;j++){
+//         sum += nums[j];
+//         if(sum===k) count++;
+//     }
+// }
+// console.log('count',count);
+
+
+/***************revision************************ */
+
+// Two Sum Problem:
+const nums=[3,3];
+const target = 6;
+const obj={};
 for(let i=0;i<nums.length;i++){
-    sum=0;
-    for(let j=i;j<nums.length;j++){
-        sum += nums[j];
-        if(sum===k) count++;
+    let diff = target-nums[i];
+    if(diff in obj) {
+        console.log([obj[diff],i]) ;
+        break;
     }
+    obj[nums[i]]=i;
 }
-console.log('count',count);
 
 
 
