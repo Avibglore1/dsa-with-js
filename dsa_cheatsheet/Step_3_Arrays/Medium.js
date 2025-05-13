@@ -122,24 +122,40 @@
 
 
 // kadane's Algorithm:
-const nums = [-2,1,-3,4,-1,2,1,-5,4];
-let sum=0,maxSum=-Infinity;
-let start=0,end=0,tempStart=0;
-for(let i=0;i<nums.length;i++){
-    sum +=nums[i];
-    if(sum>maxSum) {
-        maxSum=sum;
-        start=tempStart;
-        end=i;
-    }
-    if(sum<0) {
-        sum=0;
-        tempStart=i+1;
-    }
+// const nums = [-2,1,-3,4,-1,2,1,-5,4];
+// let sum=0,maxSum=-Infinity;
+// let start=0,end=0,tempStart=0;
+// for(let i=0;i<nums.length;i++){
+//     sum +=nums[i];
+//     if(sum>maxSum) {
+//         maxSum=sum;
+//         start=tempStart;
+//         end=i;
+//     }
+//     if(sum<0) {
+//         sum=0;
+//         tempStart=i+1;
+//     }
 
+// }
+// let temp = nums.slice(start,end+1);
+// console.log({maxSum,temp});
+
+
+// 2149. Rearrange Array Elements by Sign:
+const nums=[3,1,-2,-5,2,-4];
+let result=[];
+let positives=0,negative=1;
+for(let i=0;i<nums.length;i++){
+    if(nums[i]>0){
+        result[positives]=nums[i];
+        positives += 2;
+    }else{
+        result[negative]=nums[i];
+        negative += 2;
+    }
 }
-let temp = nums.slice(start,end+1);
-console.log({maxSum,temp});
+console.log(result);
 
 
 
