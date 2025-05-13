@@ -71,17 +71,39 @@
 /***************revision************************ */
 
 // Two Sum Problem:
-const nums=[3,3];
-const target = 6;
-const obj={};
-for(let i=0;i<nums.length;i++){
-    let diff = target-nums[i];
-    if(diff in obj) {
-        console.log([obj[diff],i]) ;
-        break;
+// const nums=[3,3];
+// const target = 6;
+// const obj={};
+// for(let i=0;i<nums.length;i++){
+//     let diff = target-nums[i];
+//     if(diff in obj) {
+//         console.log([obj[diff],i]) ;
+//         break;
+//     }
+//     obj[nums[i]]=i;
+// }
+
+
+// 75. Sort Colors:
+const nums= [2,0,2,1,1,0];
+let i=0,j=0,k=nums.length-1,temp;
+while(i<=k){
+    if(nums[i]===0){
+        temp=nums[i];
+        nums[i]=nums[j];
+        nums[j]=temp;
+        i++;
+        j++;
     }
-    obj[nums[i]]=i;
+    else if(nums[i]===2){
+        temp=nums[i];
+        nums[i]=nums[k];
+        nums[k]=temp;
+        k--;
+    }
+    else i++;
 }
+console.log(nums);
 
 
 
