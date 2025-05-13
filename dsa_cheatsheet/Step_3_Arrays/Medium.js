@@ -108,18 +108,38 @@
 
 // 169. Majority Element:
 
-const nums=[1,1,3,1,2,6,1,1,5,8,4,1,1];
-let frequencyCount={};
-let majorityCount=Math.floor(nums.length/2);
-for(let i=0;i<nums.length;i++){
-    if(frequencyCount[nums[i]]) frequencyCount[nums[i]] ++;
-    else frequencyCount[nums[i]] = 1;
-    if(frequencyCount[nums[i]]>majorityCount) {
-        console.log(nums[i]);
-        break;        
-    };
-}
+// const nums=[1,1,3,1,2,6,1,1,5,8,4,1,1];
+// let frequencyCount={};
+// let majorityCount=Math.floor(nums.length/2);
+// for(let i=0;i<nums.length;i++){
+//     if(frequencyCount[nums[i]]) frequencyCount[nums[i]] ++;
+//     else frequencyCount[nums[i]] = 1;
+//     if(frequencyCount[nums[i]]>majorityCount) {
+//         console.log(nums[i]);
+//         break;        
+//     };
+// }
 
+
+// kadane's Algorithm:
+const nums = [-2,1,-3,4,-1,2,1,-5,4];
+let sum=0,maxSum=-Infinity;
+let start=0,end=0,tempStart=0;
+for(let i=0;i<nums.length;i++){
+    sum +=nums[i];
+    if(sum>maxSum) {
+        maxSum=sum;
+        start=tempStart;
+        end=i;
+    }
+    if(sum<0) {
+        sum=0;
+        tempStart=i+1;
+    }
+
+}
+let temp = nums.slice(start,end+1);
+console.log({maxSum,temp});
 
 
 
