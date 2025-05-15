@@ -24,22 +24,38 @@
 
 
 // Isomorphic String:
-const s='egg';
-const t='add';
+// const s='egg';
+// const t='add';
 
-function isomorphic(s,t){
-if(s.length!==t.length) return false;
-let sObj={},tObj={};
-for(let i=0;i<s.length;i++){
-    let schar=s[i];
-    let tchar=t[i];
+// function isomorphic(s,t){
+// if(s.length!==t.length) return false;
+// let sObj={},tObj={};
+// for(let i=0;i<s.length;i++){
+//     let schar=s[i];
+//     let tchar=t[i];
 
-    if(sObj[schar] && sObj[schar]!==tchar) return false;
-    if(tObj[tchar] && tObj[tchar]!==schar) return false;
+//     if(sObj[schar] && sObj[schar]!==tchar) return false;
+//     if(tObj[tchar] && tObj[tchar]!==schar) return false;
 
-    sObj[schar] = tchar;
-    tObj[tchar] = schar;
+//     sObj[schar] = tchar;
+//     tObj[tchar] = schar;
+// }
+// return true;
+// }
+// console.log(isomorphic(s,t));
+
+
+// Longest common prefix:
+const str=["dog","racecar","car"];
+function commonPrefix(str){
+for(let i=0;i<str[0].length;i++){
+    let char=str[0][i];
+    for(let j=1;j<str.length;j++){
+        if(i>=str[j].length || str[j][i]!==char) return str[0].slice(0,i);
+    }
 }
-return true;
+return str[0];
 }
-console.log(isomorphic(s,t));
+console.log(commonPrefix(str));
+
+
