@@ -74,19 +74,23 @@
 
 
 // frequency of chars,arrange in decreasing order of frequency:
-let s="Aabb";
-let frequency={};
-for(let char of s){
-    if(frequency[char]) frequency[char]++;
-    else frequency[char] = 1;
-}
+// let s="Aabb";
+// let frequency={};
+// for(let char of s){
+//     if(frequency[char]) frequency[char]++;
+//     else frequency[char] = 1;
+// }
 
-let sortedKeys = Object.keys(frequency).sort((a,b)=>frequency[b]-frequency[a]);
-console.log(sortedKeys);
-let result='';
-for(let char of sortedKeys){
-    result += char.repeat(frequency[char])
-}
-console.log(result);
+// let sortedKeys = Object.keys(frequency).sort((a,b)=>frequency[b]-frequency[a]);
+// console.log(sortedKeys);
+// let result='';
+// for(let char of sortedKeys){
+//     result += char.repeat(frequency[char])
+// }
+// console.log(result);
+
+
+
+
 
 
