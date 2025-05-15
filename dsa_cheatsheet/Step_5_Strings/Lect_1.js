@@ -60,13 +60,16 @@
 
 
 // rotate string:
-const s='abcde';
-const goal='adeac';
-function rotateString(s,goal){
-    if(s.length!==goal.length) return false;
-    return (s+s).includes(goal);
-}
-console.log(rotateString(s,goal));
+// const s='abcde';
+// const goal='adeac';
+// function rotateString(s,goal){
+//     if(s.length!==goal.length) return false;
+//     return (s+s).includes(goal);
+// }
+// console.log(rotateString(s,goal));
 
+
+// anagram strings:
+//  return s.split('').sort().join('')===t.split('').sort().join('');
 
 
