@@ -46,16 +46,27 @@
 
 
 // Longest common prefix:
-const str=["dog","racecar","car"];
-function commonPrefix(str){
-for(let i=0;i<str[0].length;i++){
-    let char=str[0][i];
-    for(let j=1;j<str.length;j++){
-        if(i>=str[j].length || str[j][i]!==char) return str[0].slice(0,i);
-    }
+// const str=["dog","racecar","car"];
+// function commonPrefix(str){
+// for(let i=0;i<str[0].length;i++){
+//     let char=str[0][i];
+//     for(let j=1;j<str.length;j++){
+//         if(i>=str[j].length || str[j][i]!==char) return str[0].slice(0,i);
+//     }
+// }
+// return str[0];
+// }
+// console.log(commonPrefix(str));
+
+
+// rotate string:
+const s='abcde';
+const goal='adeac';
+function rotateString(s,goal){
+    if(s.length!==goal.length) return false;
+    return (s+s).includes(goal);
 }
-return str[0];
-}
-console.log(commonPrefix(str));
+console.log(rotateString(s,goal));
+
 
 
