@@ -63,27 +63,53 @@
 
 
 // longestPalindromeInWord:Optimised solution:
-const s="cbbd";
+// const s="cbbd";
 
-function validPalindrome(s){
-  let start=0,end=0;
-  for(let i=0;i<s.length;i++){
-    let len1=longest(i,i);
-    let len2=longest(i,i+1);
-    let len = Math.max(len1,len2);
-    if(len>end-start){
-      start = i-Math.floor((len-1)/2);
-      end=i+Math.floor(len/2);
-    }
-  }
+// function validPalindrome(s){
+//   let start=0,end=0;
+//   for(let i=0;i<s.length;i++){
+//     let len1=longest(i,i);
+//     let len2=longest(i,i+1);
+//     let len = Math.max(len1,len2);
+//     if(len>end-start){
+//       start = i-Math.floor((len-1)/2);
+//       end=i+Math.floor(len/2);
+//     }
+//   }
 
-  function longest(left,right){
-    while(left>=0 && right<s.length && s[left]===s[right]){
-      left--;
-      right++;
+//   function longest(left,right){
+//     while(left>=0 && right<s.length && s[left]===s[right]){
+//       left--;
+//       right++;
+//     }
+//     return right-left-1;
+//   }
+//   return s.substring(start,end+1)
+// }
+// console.log(validPalindrome(s));
+
+
+// sum of beauty of substring:
+const word="aabcbaa";
+
+function beautyString(s){
+  let sum=0;
+for(let i=0;i<s.length;i++){
+  let frequency=new Array(26).fill(0);
+  for(let j=i;j<s.length;j++){
+    const idx=s.charCodeAt(j)-97;
+    frequency[idx]++;
+
+    let min=Infinity,max=0;
+    for(let count of frequency){
+      if(count===0) continue;
+      min=Math.min(min,count);
+      max=Math.max(max,count);
     }
-    return right-left-1;
+     sum += max-min;
   }
-  return s.substring(start,end+1)
 }
-console.log(validPalindrome(s));
+return sum;
+}
+console.log(beautyString(word));
+
