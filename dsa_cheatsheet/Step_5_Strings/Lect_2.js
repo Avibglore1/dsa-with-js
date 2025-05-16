@@ -42,21 +42,48 @@
 
 
 // Roman Numeral to Integer:
-const s="LVIII";
-let romanMap={
-  'I':1,
-  'V':5,
-  'X':10,
-  'L':50,
-  'C':100,
-  'D':500,
-  'M':1000
+// const s="LVIII";
+// let romanMap={
+//   'I':1,
+//   'V':5,
+//   'X':10,
+//   'L':50,
+//   'C':100,
+//   'D':500,
+//   'M':1000
+// }
+// let total=0,preValue=0;
+// for(let i=s.length-1;i>=0;i--){
+//   let currentValue = romanMap[s[i]];
+//   if(currentValue<preValue) total -= currentValue;
+//   else total += currentValue;
+//   preValue=currentValue
+// }
+// console.log(total);
+
+
+// longestPalindromeInWord:Optimised solution:
+const s="cbbd";
+
+function validPalindrome(s){
+  let start=0,end=0;
+  for(let i=0;i<s.length;i++){
+    let len1=longest(i,i);
+    let len2=longest(i,i+1);
+    let len = Math.max(len1,len2);
+    if(len>end-start){
+      start = i-Math.floor((len-1)/2);
+      end=i+Math.floor(len/2);
+    }
+  }
+
+  function longest(left,right){
+    while(left>=0 && right<s.length && s[left]===s[right]){
+      left--;
+      right++;
+    }
+    return right-left-1;
+  }
+  return s.substring(start,end+1)
 }
-let total=0,preValue=0;
-for(let i=s.length-1;i>=0;i--){
-  let currentValue = romanMap[s[i]];
-  if(currentValue<preValue) total -= currentValue;
-  else total += currentValue;
-  preValue=currentValue
-}
-console.log(total);
+console.log(validPalindrome(s));
