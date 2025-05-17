@@ -90,26 +90,28 @@
 
 
 // sum of beauty of substring:
-const word="aabcbaa";
+// const word="aabcbaa";
 
-function beautyString(s){
-  let sum=0;
-for(let i=0;i<s.length;i++){
-  let frequency=new Array(26).fill(0);
-  for(let j=i;j<s.length;j++){
-    const idx=s.charCodeAt(j)-97;
-    frequency[idx]++;
+// function beautyString(s){
+//   let sum=0;
+// for(let i=0;i<s.length;i++){
+//   let frequency=new Array(26).fill(0);
+//   for(let j=i;j<s.length;j++){
+//     const idx=s.charCodeAt(j)-97;
+//     frequency[idx]++;
 
-    let min=Infinity,max=0;
-    for(let count of frequency){
-      if(count===0) continue;
-      min=Math.min(min,count);
-      max=Math.max(max,count);
-    }
-     sum += max-min;
-  }
-}
-return sum;
-}
-console.log(beautyString(word));
+//     let min=Infinity,max=0;
+//     for(let count of frequency){
+//       if(count===0) continue;
+//       min=Math.min(min,count);
+//       max=Math.max(max,count);
+//     }
+//      sum += max-min;
+//   }
+// }
+// return sum;
+// }
+// console.log(beautyString(word));
+
+
 
