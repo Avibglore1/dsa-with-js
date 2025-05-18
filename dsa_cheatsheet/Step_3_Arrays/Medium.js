@@ -159,64 +159,94 @@
 
 
 // set matrix to zero:
-const matrix=[[1,1,1],[1,0,1],[1,1,1]];
-let m=matrix.length;
-let n=matrix[0].length;
+// const matrix=[[1,1,1],[1,0,1],[1,1,1]];
+// let m=matrix.length;
+// let n=matrix[0].length;
 
-let firstRowZero=false,firstColZero=false;
-for(let i=0;i<m;i++){
-    if(matrix[i][0]===0){
-        firstColZero=true;
-        break;
+// let firstRowZero=false,firstColZero=false;
+// for(let i=0;i<m;i++){
+//     if(matrix[i][0]===0){
+//         firstColZero=true;
+//         break;
+//     }
+// }
+
+// for(let j=0;j<n;j++){
+//     if(matrix[0][j]===0){
+//         firstRowZero=true;
+//         break;
+//     }
+// }
+
+// for(let i=1;i<m;i++){
+//     for(let j=1;j<n;j++){
+//         if(matrix[i][j]===0){
+//             matrix[i][0]=0;
+//             matrix[0][j]=0;
+//         }
+//     }
+// }
+
+// for(let i=1;i<m;i++){
+//     if(matrix[i][0]===0){
+//         for(let j=1;j<n;j++){
+//             matrix[i][j]=0;
+//         }
+//     }
+// }
+
+// for(let j=1;j<n;j++){
+//     if(matrix[0][j]===0){
+//         for(let i=1;i<m;i++){
+//             matrix[i][j]=0;
+//         }
+//     }
+// }
+
+// if(firstRowZero){
+//     for(let j=0;j<n;j++){
+//         matrix[0][j]=0;
+//     }
+// }
+
+// if(firstColZero){
+//     for(let i=0;i<m;i++){
+//         matrix[i][0]=0
+//     }
+// }
+
+// console.log(matrix);
+
+
+
+
+// nextPermutaion:
+const arr=[1,5,1];
+let n=arr.length;
+let i=n-2;
+while(i>=0 && arr[i]>=arr[i+1]){
+    i--;
+}
+if(i>=0){
+    let j=n-1;
+    while(arr[j]<=arr[i]){
+        j--
     }
+    [arr[i],arr[j]] = [arr[j],arr[i]];
 }
 
-for(let j=0;j<n;j++){
-    if(matrix[0][j]===0){
-        firstRowZero=true;
-        break;
+reverse(arr,i+1,n-1);
+
+function reverse(nums,start,end){
+    while(start<end){
+        [nums[start],nums[end]] = [nums[end],nums[start]];
+        start++;
+        end--
     }
+    
 }
 
-for(let i=1;i<m;i++){
-    for(let j=1;j<n;j++){
-        if(matrix[i][j]===0){
-            matrix[i][0]=0;
-            matrix[0][j]=0;
-        }
-    }
-}
-
-for(let i=1;i<m;i++){
-    if(matrix[i][0]===0){
-        for(let j=1;j<n;j++){
-            matrix[i][j]=0;
-        }
-    }
-}
-
-for(let j=1;j<n;j++){
-    if(matrix[0][j]===0){
-        for(let i=1;i<m;i++){
-            matrix[i][j]=0;
-        }
-    }
-}
-
-if(firstRowZero){
-    for(let j=0;j<n;j++){
-        matrix[0][j]=0;
-    }
-}
-
-if(firstColZero){
-    for(let i=0;i<m;i++){
-        matrix[i][0]=0
-    }
-}
-
-console.log(matrix);
 
 
-
+console.log(arr);
 
