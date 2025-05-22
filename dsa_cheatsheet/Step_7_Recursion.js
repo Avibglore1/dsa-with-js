@@ -86,20 +86,41 @@
 // console.log(subsequence(nums,k));
 
 // check if sum is there in subsequence:
-let flag=false;
-const nums= [4, 3, 9, 2];
-const k=10;
+// let flag=false;
+// const nums= [4, 3, 9, 2];
+// const k=10;
+// function backtrack(start,current,currentSum){
+// if(currentSum===k){
+//     flag=true;
+//     return true;
+// }
+// for(let i=start;i<nums.length;i++){
+//     current.push(nums[i]);
+//     if(backtrack(i+1,current,currentSum+nums[i])) return true;
+//     current.pop();
+// }
+// }
+// backtrack(0,[],0);
+// console.log(flag?'Yes':'No');
+
+
+// print subsequence whose sum=target,repetetive element and less than 150 search.
+const candidates = [2, 3, 5, 4];
+const target=7;
+
+let result=[];
 function backtrack(start,current,currentSum){
-if(currentSum===k){
-    flag=true;
-    return true;
+if(currentSum===target){
+    result.push([...current]);
+    
 }
-for(let i=start;i<nums.length;i++){
-    current.push(nums[i]);
-    if(backtrack(i+1,current,currentSum+nums[i])) return true;
+if(currentSum>target) return
+for(let i=start;i<candidates.length;i++){
+    current.push(candidates[i]);
+    backtrack(i,current,currentSum+candidates[i]);
     current.pop();
 }
+return result
 }
-backtrack(0,[],0);
-console.log(flag?'Yes':'No');
+console.log(backtrack(0,[],0))
 
