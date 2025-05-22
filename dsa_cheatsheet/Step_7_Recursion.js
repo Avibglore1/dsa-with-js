@@ -64,23 +64,42 @@
 
 
 // subsequence sum=k;
-const nums= [4, 2, 10, 5, 1, 3];
-const k=5;
-function subsequence(nums,k){
-    let count=0;
-    let result=[]
-    function backtrack(start,current,currentSum){
-        if(currentSum===k){
-            result.push([...current]);
-            count++
-        } 
-        for(let i=start;i<nums.length;i++){
-            current.push(nums[i]);
-            backtrack(i+1,current,currentSum+nums[i]);
-            current.pop();
-        }
-    }
-    backtrack(0,[],0)
-    return {count,result};
+// const nums= [4, 2, 10, 5, 1, 3];
+// const k=5;
+// function subsequence(nums,k){
+//     let count=0;
+//     let result=[]
+//     function backtrack(start,current,currentSum){
+//         if(currentSum===k){
+//             result.push([...current]);
+//             count++
+//         } 
+//         for(let i=start;i<nums.length;i++){
+//             current.push(nums[i]);
+//             backtrack(i+1,current,currentSum+nums[i]);
+//             current.pop();
+//         }
+//     }
+//     backtrack(0,[],0)
+//     return {count,result};
+// }
+// console.log(subsequence(nums,k));
+
+// check if sum is there in subsequence:
+let flag=false;
+const nums= [4, 3, 9, 2];
+const k=10;
+function backtrack(start,current,currentSum){
+if(currentSum===k){
+    flag=true;
+    return true;
 }
-console.log(subsequence(nums,k));
+for(let i=start;i<nums.length;i++){
+    current.push(nums[i]);
+    if(backtrack(i+1,current,currentSum+nums[i])) return true;
+    current.pop();
+}
+}
+backtrack(0,[],0);
+console.log(flag?'Yes':'No');
+
