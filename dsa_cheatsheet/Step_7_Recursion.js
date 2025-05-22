@@ -46,18 +46,41 @@
 
 
 // printallsubsequence:
-const nums=[1,2,3]
-function subsequence(nums){
-let result=[];
-function backtrack(start,current){
-result.push([...current]);
-for(let i=start;i<nums.length;i++){
-    current.push(nums[i]);
-    backtrack(i+1,current);
-    current.pop();
+// const nums=[1,2,3]
+// function subsequence(nums){
+// let result=[];
+// function backtrack(start,current){
+// result.push([...current]);
+// for(let i=start;i<nums.length;i++){
+//     current.push(nums[i]);
+//     backtrack(i+1,current);
+//     current.pop();
+// }
+// }
+// backtrack(0,[]);
+// return result
+// }
+// console.log(subsequence(nums));
+
+
+// subsequence sum=k;
+const nums= [4, 2, 10, 5, 1, 3];
+const k=5;
+function subsequence(nums,k){
+    let count=0;
+    let result=[]
+    function backtrack(start,current,currentSum){
+        if(currentSum===k){
+            result.push([...current]);
+            count++
+        } 
+        for(let i=start;i<nums.length;i++){
+            current.push(nums[i]);
+            backtrack(i+1,current,currentSum+nums[i]);
+            current.pop();
+        }
+    }
+    backtrack(0,[],0)
+    return {count,result};
 }
-}
-backtrack(0,[]);
-return result
-}
-console.log(subsequence(nums));
+console.log(subsequence(nums,k));
