@@ -190,28 +190,59 @@
 // console.log(subset(nums));
 
 // sum of k combination equal n:
-const k=3;
-const n=9;
+// const k=3;
+// const n=9;
 
-function sumCombination(n,k){
+// function sumCombination(n,k){
+//     let result=[]
+//     function backtrack(start,current,sum){
+//         if(current.length===3){
+//             if (sum===n) result.push([...current])
+//             return
+//         }
+//         for(let i=start;i<=9;i++){
+//             if(sum+i>n) break;
+//             current.push(i);
+//             backtrack(i+1,current,sum+i);
+//             current.pop()
+//         }
+//     }
+//     backtrack(1,[],0)
+//     return result
+// }
+// console.log(sumCombination(n,k));
+
+
+
+// letter combination of a phone number:
+const digits = "3";
+function letterPhone(digits){
     let result=[]
-    function backtrack(start,current,sum){
-        if(current.length===3){
-            if (sum===n) result.push([...current])
+if(digits.length===0) return []
+let digitsToChar={
+    '2':'abc',
+    '3':'def',
+    '4':'ghi',
+    '5':'jkl',
+    '6':'mno',
+    '7':'pqrs',
+    '8':'tuv',
+    '9':'wxyz'
+    }
+    function backtrack(index,path){
+        if(path.length===digits.length){
+            result.push(path);
             return
         }
-        for(let i=start;i<=9;i++){
-            if(sum+i>n) break;
-            current.push(i);
-            backtrack(i+1,current,sum+i);
-            current.pop()
+        let letters = digitsToChar[digits[index]];
+        for(let char of letters){
+            backtrack(index+1,path+char)
         }
     }
-    backtrack(1,[],0)
+    backtrack(0,'')
     return result
 }
-console.log(sumCombination(n,k));
-
+console.log(letterPhone(digits));
 
 
 
