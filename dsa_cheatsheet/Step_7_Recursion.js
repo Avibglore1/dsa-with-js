@@ -126,27 +126,45 @@
 
 
 // combinationSum-II:
-const candidates = [2, 5, 2, 1, 2] ;
-const target=5;
-function uniqueCandidate(candidates,target){
-candidates.sort((a,b)=>a-b);
-let result=[];
-function backtrack(start,current,currentSum){
-    if(currentSum===target) {
-        result.push([...current]);
-        return
+// const candidates = [2, 5, 2, 1, 2] ;
+// const target=5;
+// function uniqueCandidate(candidates,target){
+// candidates.sort((a,b)=>a-b);
+// let result=[];
+// function backtrack(start,current,currentSum){
+//     if(currentSum===target) {
+//         result.push([...current]);
+//         return
+//     }
+//     if(currentSum>target) return
+//     for(let i=start;i<candidates.length;i++){
+//         if(i>start && candidates[i]===candidates[i-1]) continue
+//         current.push(candidates[i]);
+//         backtrack(i+1,current,currentSum+candidates[i]);
+//         current.pop()
+//     }
+// }
+// backtrack(0,[],0)
+// return result
+// }
+// console.log(uniqueCandidate(candidates,target));
+
+
+// print sum in a recursion:
+const nums = [5, 2, 1];
+function sum(nums){
+    let result=[];
+    function backtrack(index,currentSum){
+        if(index===nums.length){
+            result.push(currentSum);
+            return
+        }
+        backtrack(index+1,currentSum+nums[index]);
+        backtrack(index+1,currentSum)
     }
-    if(currentSum>target) return
-    for(let i=start;i<candidates.length;i++){
-        if(i>start && candidates[i]===candidates[i-1]) continue
-        current.push(candidates[i]);
-        backtrack(i+1,current,currentSum+candidates[i]);
-        current.pop()
-    }
+    backtrack(0,0);
+    return result
 }
-backtrack(0,[],0)
-return result
-}
-console.log(uniqueCandidate(candidates,target));
+console.log(sum(nums));
 
 
