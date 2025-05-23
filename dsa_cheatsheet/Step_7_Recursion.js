@@ -105,22 +105,48 @@
 
 
 // print subsequence whose sum=target,repetetive element and less than 150 search.
-const candidates = [2, 3, 5, 4];
-const target=7;
+// const candidates = [2, 3, 5, 4];
+// const target=7;
 
+// let result=[];
+// function backtrack(start,current,currentSum){
+// if(currentSum===target){
+//     result.push([...current]);
+    
+// }
+// if(currentSum>target) return
+// for(let i=start;i<candidates.length;i++){
+//     current.push(candidates[i]);
+//     backtrack(i,current,currentSum+candidates[i]);
+//     current.pop();
+// }
+// return result
+// }
+// console.log(backtrack(0,[],0))
+
+
+// combinationSum-II:
+const candidates = [2, 5, 2, 1, 2] ;
+const target=5;
+function uniqueCandidate(candidates,target){
+candidates.sort((a,b)=>a-b);
 let result=[];
 function backtrack(start,current,currentSum){
-if(currentSum===target){
-    result.push([...current]);
-    
+    if(currentSum===target) {
+        result.push([...current]);
+        return
+    }
+    if(currentSum>target) return
+    for(let i=start;i<candidates.length;i++){
+        if(i>start && candidates[i]===candidates[i-1]) continue
+        current.push(candidates[i]);
+        backtrack(i+1,current,currentSum+candidates[i]);
+        current.pop()
+    }
 }
-if(currentSum>target) return
-for(let i=start;i<candidates.length;i++){
-    current.push(candidates[i]);
-    backtrack(i,current,currentSum+candidates[i]);
-    current.pop();
-}
+backtrack(0,[],0)
 return result
 }
-console.log(backtrack(0,[],0))
+console.log(uniqueCandidate(candidates,target));
+
 
