@@ -151,20 +151,41 @@
 
 
 // print sum in a recursion:
-const nums = [5, 2, 1];
-function sum(nums){
-    let result=[];
-    function backtrack(index,currentSum){
-        if(index===nums.length){
-            result.push(currentSum);
-            return
-        }
-        backtrack(index+1,currentSum+nums[index]);
-        backtrack(index+1,currentSum)
-    }
-    backtrack(0,0);
-    return result
-}
-console.log(sum(nums));
+// const nums = [5, 2, 1];
+// function sum(nums){
+//     let result=[];
+//     function backtrack(index,currentSum){
+//         if(index===nums.length){
+//             result.push(currentSum);
+//             return
+//         }
+//         backtrack(index+1,currentSum+nums[index]);
+//         backtrack(index+1,currentSum)
+//     }
+//     backtrack(0,0);
+//     return result
+// }
+// console.log(sum(nums));
 
+
+
+// Given an integer array nums, which can have duplicate entries, provide the power set. 
+// Duplicate subsets cannot exist in the solution set. Return the answer in any sequence.
+const nums=[5,1,2,5]
+function subset(nums){
+let result=[];
+nums.sort((a,b)=>a-b)
+function backtrack(start,current){
+    result.push([...current])
+    for(let i=start;i<nums.length;i++){
+        if(i>start && nums[i]===nums[i-1]) continue
+        current.push(nums[i])
+        backtrack(i+1,current)
+        current.pop()
+    }
+}
+backtrack(0,[])
+return result
+}
+console.log(subset(nums));
 
