@@ -171,21 +171,47 @@
 
 // Given an integer array nums, which can have duplicate entries, provide the power set. 
 // Duplicate subsets cannot exist in the solution set. Return the answer in any sequence.
-const nums=[5,1,2,5]
-function subset(nums){
-let result=[];
-nums.sort((a,b)=>a-b)
-function backtrack(start,current){
-    result.push([...current])
-    for(let i=start;i<nums.length;i++){
-        if(i>start && nums[i]===nums[i-1]) continue
-        current.push(nums[i])
-        backtrack(i+1,current)
-        current.pop()
+// const nums=[5,1,2,5]
+// function subset(nums){
+// let result=[];
+// nums.sort((a,b)=>a-b)
+// function backtrack(start,current){
+//     result.push([...current])
+//     for(let i=start;i<nums.length;i++){
+//         if(i>start && nums[i]===nums[i-1]) continue
+//         current.push(nums[i])
+//         backtrack(i+1,current)
+//         current.pop()
+//     }
+// }
+// backtrack(0,[])
+// return result
+// }
+// console.log(subset(nums));
+
+// sum of k combination equal n:
+const k=3;
+const n=9;
+
+function sumCombination(n,k){
+    let result=[]
+    function backtrack(start,current,sum){
+        if(current.length===3){
+            if (sum===n) result.push([...current])
+            return
+        }
+        for(let i=start;i<=9;i++){
+            if(sum+i>n) break;
+            current.push(i);
+            backtrack(i+1,current,sum+i);
+            current.pop()
+        }
     }
+    backtrack(1,[],0)
+    return result
 }
-backtrack(0,[])
-return result
-}
-console.log(subset(nums));
+console.log(sumCombination(n,k));
+
+
+
 
