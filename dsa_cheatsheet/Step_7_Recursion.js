@@ -244,12 +244,31 @@
 // }
 // console.log(letterPhone(digits));
 
-let a=11;
-let b=22;
-let c = a+b+ a++ + b++ + ++a + ++b;
-console.log(a);
-console.log(b);
-console.log(c);
+// let a=11;
+// let b=22;
+// let c = a+b+ a++ + b++ + ++a + ++b;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+
+// let a=10;
+// let b=++a++; //Error
+// console.log(b);
+// console.log(a);
+
+
+// heron's formula:
+let a=10;
+let b=20;
+let c=25;
+let s=(a+b+c)/2;
+let d=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+console.log(d);
+
+
+
+
 
 
 
