@@ -259,14 +259,26 @@
 
 
 // heron's formula:
-let a=10;
-let b=20;
-let c=25;
-let s=(a+b+c)/2;
-let d=Math.sqrt(s*(s-a)*(s-b)*(s-c));
-console.log(d);
+// area will be zero if it doesn/t form a triangle:
+// let a=10;
+// let b=20;
+// let c=25;
+// let s=(a+b+c)/2;
+// let d=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+// console.log(d);
 
 
+let arr=[10,20,30,30,30];
+let smax=Math.min(arr[0],arr[1]);
+let max=Math.max(arr[0],arr[1]);
+for(let i=2;i<arr.length;i++){
+    if(arr[i]>max){
+        smax=max;
+        max=arr[i];
+    }else if(arr[i]>smax && arr[i]<max) smax=arr[i]
+}
+console.log(max);
+console.log(smax);
 
 
 
