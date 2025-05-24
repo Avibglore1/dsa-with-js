@@ -215,34 +215,46 @@
 
 
 // letter combination of a phone number:
-const digits = "3";
-function letterPhone(digits){
-    let result=[]
-if(digits.length===0) return []
-let digitsToChar={
-    '2':'abc',
-    '3':'def',
-    '4':'ghi',
-    '5':'jkl',
-    '6':'mno',
-    '7':'pqrs',
-    '8':'tuv',
-    '9':'wxyz'
-    }
-    function backtrack(index,path){
-        if(path.length===digits.length){
-            result.push(path);
-            return
-        }
-        let letters = digitsToChar[digits[index]];
-        for(let char of letters){
-            backtrack(index+1,path+char)
-        }
-    }
-    backtrack(0,'')
-    return result
-}
-console.log(letterPhone(digits));
+// const digits = "3";
+// function letterPhone(digits){
+//     let result=[]
+// if(digits.length===0) return []
+// let digitsToChar={
+//     '2':'abc',
+//     '3':'def',
+//     '4':'ghi',
+//     '5':'jkl',
+//     '6':'mno',
+//     '7':'pqrs',
+//     '8':'tuv',
+//     '9':'wxyz'
+//     }
+//     function backtrack(index,path){
+//         if(path.length===digits.length){
+//             result.push(path);
+//             return
+//         }
+//         let letters = digitsToChar[digits[index]];
+//         for(let char of letters){
+//             backtrack(index+1,path+char)
+//         }
+//     }
+//     backtrack(0,'')
+//     return result
+// }
+// console.log(letterPhone(digits));
+
+let a=11;
+let b=22;
+let c = a+b+ a++ + b++ + ++a + ++b;
+console.log(a);
+console.log(b);
+console.log(c);
+
+
+
+
+
 
 
 
