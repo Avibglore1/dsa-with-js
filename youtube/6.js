@@ -859,22 +859,40 @@
 
 
 // merge sorted array:
+// const arr1=[2,5,6];
+// const arr2=[1,3,4,8];
+// let i=0,j=0;
+// let temp=[];
+// let k=0;
+// while(i<arr1.length && j<arr2.length){
+//     if(arr1[i]<arr2[j]){
+//         temp[k++]=arr1[i++];
+//     }else{
+//         temp[k++] = arr2[j++];
+//     }
+// }
+// while(i<arr1.length){
+//     temp[k++]=arr1[i++];
+// }
+// while(j<arr2.length){
+//     temp[k++]=arr2[j++];
+// }
+// console.log(temp);
+
+// merge sorted array in-place:
 const arr1=[2,5,6];
 const arr2=[1,3,4,8];
-let i=0,j=0;
-let temp=[];
-let k=0;
-while(i<arr1.length && j<arr2.length){
-    if(arr1[i]<arr2[j]){
-        temp[k++]=arr1[i++];
+let i=arr1.length-1;
+let j=arr2.length-1;
+let k=arr1.length+arr2.length-1;
+while(i>=0 && j>=0){
+    if(arr1[i]>arr2[j]){
+        arr1[k--]=arr1[i--]
     }else{
-        temp[k++] = arr2[j++];
+        arr1[k--]=arr2[j--]
     }
 }
-while(i<arr1.length){
-    temp[k++]=arr1[i++];
+while(j>=0){
+    arr1[k--]=arr2[j--]
 }
-while(j<arr2.length){
-    temp[k++]=arr2[j++];
-}
-console.log(temp);
+console.log(arr1);
