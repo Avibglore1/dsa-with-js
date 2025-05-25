@@ -843,17 +843,38 @@
 
 // right rotation:
 
-const arr=[1,2,3,4,5]; //[5,1,2,3,4]->[4,5,1,2,3]->[3,4,5,1,2]->[2,3,4,5,1]->[1,2,3,4,5]
-let k=3;
-reverse(0,arr.length-1);
-reverse(0,k-1);
-reverse(k,arr.length-1);
-function reverse(i,j){
-    while(i<j){
-        [arr[i],arr[j]] = [arr[j],arr[i]];
-        i++;
-        j--
+// const arr=[1,2,3,4,5]; //[5,1,2,3,4]->[4,5,1,2,3]->[3,4,5,1,2]->[2,3,4,5,1]->[1,2,3,4,5]
+// let k=3;
+// reverse(0,arr.length-1);
+// reverse(0,k-1);
+// reverse(k,arr.length-1);
+// function reverse(i,j){
+//     while(i<j){
+//         [arr[i],arr[j]] = [arr[j],arr[i]];
+//         i++;
+//         j--
+//     }
+// }
+// console.log(arr);
+
+
+// merge sorted array:
+const arr1=[2,5,6];
+const arr2=[1,3,4,8];
+let i=0,j=0;
+let temp=[];
+let k=0;
+while(i<arr1.length && j<arr2.length){
+    if(arr1[i]<arr2[j]){
+        temp[k++]=arr1[i++];
+    }else{
+        temp[k++] = arr2[j++];
     }
 }
-console.log(arr);
-
+while(i<arr1.length){
+    temp[k++]=arr1[i++];
+}
+while(j<arr2.length){
+    temp[k++]=arr2[j++];
+}
+console.log(temp);
