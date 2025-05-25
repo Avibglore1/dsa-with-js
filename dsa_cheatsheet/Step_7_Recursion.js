@@ -268,17 +268,30 @@
 // console.log(d);
 
 
-let arr=[10,20,30,30,30];
-let smax=Math.min(arr[0],arr[1]);
-let max=Math.max(arr[0],arr[1]);
-for(let i=2;i<arr.length;i++){
-    if(arr[i]>max){
-        smax=max;
-        max=arr[i];
-    }else if(arr[i]>smax && arr[i]<max) smax=arr[i]
+// let arr=[10,20,30,30,30];
+// let smax=Math.min(arr[0],arr[1]);
+// let max=Math.max(arr[0],arr[1]);
+// for(let i=2;i<arr.length;i++){
+//     if(arr[i]>max){
+//         smax=max;
+//         max=arr[i];
+//     }else if(arr[i]>smax && arr[i]<max) smax=arr[i]
+// }
+// console.log(max);
+// console.log(smax);
+
+
+// reverse array without extra space:
+const arr=[10,20,30,40,50];
+let i=0;
+let j=arr.length-1;
+while(i<j){
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+    i++;
+    j--
 }
-console.log(max);
-console.log(smax);
+console.log(arr);
+
 
 
 
