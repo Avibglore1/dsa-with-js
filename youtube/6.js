@@ -790,14 +790,35 @@
 
 
 // left rotaion by k steps:
-const arr=[10,20,30,40] //[20,30,40,10]->[30,40,10,20]->[40,10,20,30]->[10,20,30,40]
-let k=Number(prompt("Enter number of times array to be rotated"));
-k=k%arr.length
-for(let i=1;i<=k;i++){
-    let copy= arr[0];
-    for(let j=0;j<arr.length-1;j++){
-        arr[j]=arr[j+1]
-    }
-    arr[arr.length-1]=copy;
+// const arr=[10,20,30,40] //[20,30,40,10]->[30,40,10,20]->[40,10,20,30]->[10,20,30,40]
+// let k=Number(prompt("Enter number of times array to be rotated"));
+// k=k%arr.length
+// for(let i=1;i<=k;i++){
+//     let copy= arr[0];
+//     for(let j=0;j<arr.length-1;j++){
+//         arr[j]=arr[j+1]
+//     }
+//     arr[arr.length-1]=copy;
+// }
+// console.log(arr);
+
+
+// better approach than above for left and right rotation:
+// left-rotation by k steps:
+// const arr=[10,20,30,40,50];
+// let k=2;
+// let temp=new Array(arr.length);
+// for(let i=0;i<arr.length;i++){
+//     temp[i]=arr[(i+k)%arr.length]
+// }
+// console.log(temp);
+
+
+// right rotation by k steps:
+const arr=[1,2,3,4,5]; //[5,1,2,3,4]->[4,5,1,2,3]->[3,4,5,1,2]->[2,3,4,5,1]->[1,2,3,4,5]
+let k=2;
+let temp=[];
+for(let i=0;i<arr.length;i++){
+    temp[(i+k)%arr.length]=arr[i];
 }
-console.log(arr);
+console.log(temp);
