@@ -825,15 +825,32 @@
 
 
 // three-reverse method for left and right rotaion:
-const arr=[10,20,30,40] //[20,30,40,10]->[30,40,10,20]->[40,10,20,30]
-let k=5;
-k=k%arr.length;
+// left rotation by k steps:
+// const arr=[10,20,30,40] //[20,30,40,10]->[30,40,10,20]->[40,10,20,30]
+// let k=5;
+// k=k%arr.length;
+// reverse(0,k-1);
+// reverse(k,arr.length-1);
+// reverse(0,arr.length-1)
+// function reverse(i,j){
+//     while(i<=j){
+//         [arr[i],arr[j]]=[arr[j],arr[i]];
+//         i++;
+//         j--
+//     }
+// }
+// console.log(arr);
+
+// right rotation:
+
+const arr=[1,2,3,4,5]; //[5,1,2,3,4]->[4,5,1,2,3]->[3,4,5,1,2]->[2,3,4,5,1]->[1,2,3,4,5]
+let k=3;
+reverse(0,arr.length-1);
 reverse(0,k-1);
 reverse(k,arr.length-1);
-reverse(0,arr.length-1)
 function reverse(i,j){
     while(i<=j){
-        [arr[i],arr[j]]=[arr[j],arr[i]];
+        [arr[i],arr[j]] = [arr[j],arr[i]];
         i++;
         j--
     }
