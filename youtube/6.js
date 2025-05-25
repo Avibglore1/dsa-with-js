@@ -779,10 +779,25 @@
 
 
 //right rotation by 1 element:
-const arr=[10,20,30,40,50];
-let copy=arr[arr.length-1];
-for(let i=arr.length-1;i>0;i--){
-    arr[i]=arr[i-1]
+// const arr=[10,20,30,40,50];
+// let copy=arr[arr.length-1];
+// for(let i=arr.length-1;i>0;i--){
+//     arr[i]=arr[i-1]
+// }
+// arr[0]=copy;
+// console.log(arr);
+
+
+
+// left rotaion by k steps:
+const arr=[10,20,30,40] //[20,30,40,10]->[30,40,10,20]->[40,10,20,30]->[10,20,30,40]
+let k=Number(prompt("Enter number of times array to be rotated"));
+k=k%arr.length
+for(let i=1;i<=k;i++){
+    let copy= arr[0];
+    for(let j=0;j<arr.length-1;j++){
+        arr[j]=arr[j+1]
+    }
+    arr[arr.length-1]=copy;
 }
-arr[0]=copy;
 console.log(arr);
