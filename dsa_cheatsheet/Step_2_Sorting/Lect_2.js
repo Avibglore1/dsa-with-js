@@ -77,18 +77,30 @@
 // bubble element is passed to next if condition is not met:
 
 // Selection Sort:
-const arr=[1,10,5,12,9,1,10,12];
-let index;
-for(let i=0;i<arr.length;i++){
-    let min=arr[i];
-    index=i;
-    for(let j=i+1;j<arr.length;j++){
-        if(arr[j]<min) {
-            index=j;
-            min=arr[j]
-        }
-    }
-    [arr[i],arr[index]]=[arr[index],arr[i]];
-}
+// const arr=[1,10,5,12,9,1,10,12];
+// let index;
+// for(let i=0;i<arr.length;i++){
+//     let min=arr[i];
+//     index=i;
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[j]<min) {
+//             index=j;
+//             min=arr[j]
+//         }
+//     }
+//     [arr[i],arr[index]]=[arr[index],arr[i]];
+// }
 
+// console.log(arr);
+
+const arr=[4,9,74,25,31,45]
+for(let i=1;i<arr.length;i++){
+    let j=i-1;
+    let key=arr[i];
+    while(j!==-1 && arr[j]>key ){
+            arr[j+1]=arr[j];
+            j--
+    }
+    arr[j+1]=key;
+}
 console.log(arr);
