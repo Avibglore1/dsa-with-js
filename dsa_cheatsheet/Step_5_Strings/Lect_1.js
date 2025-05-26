@@ -90,6 +90,26 @@
 // console.log(result);
 
 
+const arr =  [4, 4, 5, 5, 6];
+let frequency={};
+let result;
+for(let num of arr){
+    if(frequency[num]) frequency[num]++;
+    else frequency[num]=1;
+}
+let maxFrequency=0;
+for(let num in frequency){
+    let currentFreq=frequency[num];
+    let currentNum=parseInt(num);
+    if(currentFreq>maxFrequency) {
+        maxFrequency=currentFreq;
+        result=currentNum;
+    }
+    else if(maxFrequency===currentFreq && currentNum<result) result=currentNum
+}
+console.log(result);
+
+
 
 
 
