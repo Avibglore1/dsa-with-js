@@ -294,16 +294,24 @@
 
 
 // move all zeros to left and all 1s to right:
-const arr=[1,0,1,0,0,1,1,1,0,0];
-let j=0;
-for(let i=0;i<arr.length;i++){
-    if(arr[i]===0){
-        [arr[i],arr[j]]=[arr[j],arr[i]];
-        j++
-    }
-}
+// const arr=[1,0,1,0,0,1,1,1,0,0];
+// let j=0;
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]===0){
+//         [arr[i],arr[j]]=[arr[j],arr[i]];
+//         j++
+//     }
+// }
 
-console.log(arr);
+// console.log(arr);
+
+
+
+function Number(n){
+if(n===1) return 1;
+return n + Number(n-1);
+}
+console.log(Number(6))
 
 
 
