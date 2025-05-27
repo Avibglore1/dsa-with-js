@@ -8,3 +8,14 @@
 // let s = 'My';
 
 // console.log(s.concat(" ","name ",'is ','Avinash ','Kumar'));
+
+/*******revision************** */
+const s='Avinash';
+// for(let char of s){
+//     console.log(char);
+// }
+
+for(let i=0;i<s.length;i++){
+    console.log(s[i]);
+    
+}
