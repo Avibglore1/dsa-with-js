@@ -11,11 +11,17 @@
 
 /*******revision************** */
 const s='Avinash';
+let rev='';
 // for(let char of s){
 //     console.log(char);
 // }
 
-for(let i=0;i<s.length;i++){
-    console.log(s[i]);
+// for(let i=0;i<s.length;i++){
+//     console.log(s[i]);
     
+// }
+
+for(let i=s.length-1;i>=0;i--){
+  rev=  rev.concat(s[i])
 }
+console.log(rev);
