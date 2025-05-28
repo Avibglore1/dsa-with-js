@@ -130,5 +130,17 @@
 
 
 // Q.reverse a string such that there should be only single space between words:
-let s='   How   is  u';
-console.log(s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' '));
+// let s='   How   is  u';
+// console.log(s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' '));
+
+// largest odd-numbered substring:
+const nums= "35427";
+let result='';
+for(let i=nums.length-1;i>=0;i--){
+    if(Number(nums[i])%2===1) {
+        result=nums.slice(0,i+1);
+        break;
+    }
+}
+console.log(result);
+
