@@ -112,20 +112,23 @@
 /*************revision********************* */
 
 // Q.Remove outer parenthesis:
-const s="()()" ;
+// const s="()()" ;
 
-let result='';
-let opened=0;
-for(let char of s){
-    if(char==='('){
-        if(opened>0) result += char;
-        opened++
-    }else{
-        opened--;
-        if(opened>0) result += char;
-    }
-}
-console.log(result);
+// let result='';
+// let opened=0;
+// for(let char of s){
+//     if(char==='('){
+//         if(opened>0) result += char;
+//         opened++
+//     }else{
+//         opened--;
+//         if(opened>0) result += char;
+//     }
+// }
+// console.log(result);
 
 
 
+// Q.reverse a string such that there should be only single space between words:
+let s='   How   is  u';
+console.log(s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' '));
