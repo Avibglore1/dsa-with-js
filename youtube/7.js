@@ -22,6 +22,6 @@ let rev='';
 // }
 
 for(let i=s.length-1;i>=0;i--){
-  rev=  rev.concat(s[i])
+  rev= rev.concat(s[i])
 }
 console.log(rev);
