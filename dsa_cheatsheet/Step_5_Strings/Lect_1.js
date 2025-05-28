@@ -134,13 +134,32 @@
 // console.log(s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' '));
 
 // largest odd-numbered substring:
-const nums= "35427";
-let result='';
-for(let i=nums.length-1;i>=0;i--){
-    if(Number(nums[i])%2===1) {
-        result=nums.slice(0,i+1);
-        break;
+// const nums= "35427";
+// let result='';
+// for(let i=nums.length-1;i>=0;i--){
+//     if(Number(nums[i])%2===1) {
+//         result=nums.slice(0,i+1);
+//         break;
+//     }
+// }
+// console.log(result);
+
+
+// longest common prefix:
+
+const arr=["flower","flow","flight"];
+function stringPrefix(arr){
+let str=arr[0];
+for(let i=0;i<str.length;i++){
+    for(let j=1;j<arr.length;j++){
+        if(i>=arr[j].length || str[i]!==arr[j][i]) {
+            return result=str.slice(0,i); 
+        
+        }
     }
 }
-console.log(result);
+return str
+}
+console.log(stringPrefix(arr))
+
 
