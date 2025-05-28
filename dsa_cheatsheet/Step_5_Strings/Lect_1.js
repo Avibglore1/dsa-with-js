@@ -147,19 +147,42 @@
 
 // longest common prefix:
 
-const arr=["flower","flow","flight"];
-function stringPrefix(arr){
-let str=arr[0];
-for(let i=0;i<str.length;i++){
-    for(let j=1;j<arr.length;j++){
-        if(i>=arr[j].length || str[i]!==arr[j][i]) {
-            return result=str.slice(0,i); 
+// const arr=["flower","flow","flight"];
+// function stringPrefix(arr){
+// let str=arr[0];
+// for(let i=0;i<str.length;i++){
+//     for(let j=1;j<arr.length;j++){
+//         if(i>=arr[j].length || str[i]!==arr[j][i]) {
+//             return result=str.slice(0,i); 
         
-        }
-    }
+//         }
+//     }
+// }
+// return str
+// }
+// console.log(stringPrefix(arr))
+
+
+// Isomorphic String:
+const s='paper';
+const t='title';
+
+function isomorphic(s,t){
+if(s.length!==t.length) return false
+
+let sObj={},tObj={}
+for(let i=0;i<s.length;i++){
+    let schar=s[i];
+    let tchar=t[i];
+    if(sObj[schar] && sObj[schar]!==tchar) return false;
+    if(tObj[tchar] && tObj[tchar]!==schar) return false;
+
+    sObj[schar] = tchar;
+    tObj[tchar] = schar;
 }
-return str
+return true
 }
-console.log(stringPrefix(arr))
+console.log(isomorphic(s,t));
+
 
 
