@@ -192,23 +192,39 @@
 
 /************revision************* */
 
-const nums=[10,10,8];
-function maxSmax(nums){
-if(nums.length<2) return "second maximum doesnt exist"
-let max=-Infinity;
-let smax=-Infinity;
+// const nums=[10,10,8];
+// function maxSmax(nums){
+// if(nums.length<2) return "second maximum doesnt exist"
+// let max=-Infinity;
+// let smax=-Infinity;
+// for(let i=0;i<nums.length;i++){
+//     if(nums[i]>max){
+//         smax=max;
+//         max=nums[i];
+//     }
+//     else if(nums[i]>smax && nums[i]<max){
+//         smax=nums[i];
+//     }
+// }
+// if(smax===-Infinity) return {max,smax:"secondmax do not exist"};
+// else return {max,smax}
+// }
+// console.log(maxSmax(nums));
+
+
+// check if array is sorted and rotated:
+const nums = [2,3,4,5];
+let count=0;
 for(let i=0;i<nums.length;i++){
-    if(nums[i]>max){
-        smax=max;
-        max=nums[i];
-    }
-    else if(nums[i]>smax && nums[i]<max){
-        smax=nums[i];
-    }
+    if(nums[i]>nums[(i+1)%nums.length]) count++;
 }
-if(smax===-Infinity) return {max,smax:"secondmax do not exist"};
-else return {max,smax}
-}
-console.log(maxSmax(nums));
+if(count<=1) {
+    if(nums[0]>nums[nums.length-1]) console.log('Array is sorted and rotated');
+    else console.log('Array is sorted');   
+} 
+else console.log('Array was not sorted initially');
+
+
+
 
 
