@@ -161,30 +161,54 @@
 
 
 // union of two arrays:
-const nums1 =  [1, 2, 3, 4, 5];
-const nums2 = [1, 2, 7];
-function unionArray(nums1, nums2) {
-        let temp=[];
-        let i=0,j=0,k=0;
-        while(i<nums1.length && j<nums2.length){
-            if(nums1[i]<nums2[j]) {
-                if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];   
-            }
-            else if(nums1[i]===nums2[j]){
-                 if(k===0 || temp[k-1]!==nums2[j]) temp[k++] = nums2[i++];   
-                 j++;
-            }
-            else{
-                if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[j++]; 
-                i++;
-            }
-        }
-        while(i<nums1.length){
-            if(temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];
+// const nums1 =  [1, 2, 3, 4, 5];
+// const nums2 = [1, 2, 7];
+// function unionArray(nums1, nums2) {
+//         let temp=[];
+//         let i=0,j=0,k=0;
+//         while(i<nums1.length && j<nums2.length){
+//             if(nums1[i]<nums2[j]) {
+//                 if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];   
+//             }
+//             else if(nums1[i]===nums2[j]){
+//                  if(k===0 || temp[k-1]!==nums2[j]) temp[k++] = nums2[i++];   
+//                  j++;
+//             }
+//             else{
+//                 if(k===0 || temp[k-1]!==nums1[i]) temp[k++] = nums1[j++]; 
+//                 i++;
+//             }
+//         }
+//         while(i<nums1.length){
+//             if(temp[k-1]!==nums1[i]) temp[k++] = nums1[i++];
             
-        }while(j<nums2.length){
-           if(temp[k-1]!==nums2[j]) temp[k++] = nums2[j++];
-        }
-         return temp
+//         }while(j<nums2.length){
+//            if(temp[k-1]!==nums2[j]) temp[k++] = nums2[j++];
+//         }
+//          return temp
+//     }
+// console.log(unionArray(nums1, nums2))
+
+
+/************revision************* */
+
+const nums=[10,10,8];
+function maxSmax(nums){
+if(nums.length<2) return "second maximum doesnt exist"
+let max=-Infinity;
+let smax=-Infinity;
+for(let i=0;i<nums.length;i++){
+    if(nums[i]>max){
+        smax=max;
+        max=nums[i];
     }
-console.log(unionArray(nums1, nums2))
+    else if(nums[i]>smax && nums[i]<max){
+        smax=nums[i];
+    }
+}
+if(smax===-Infinity) return {max,smax:"secondmax do not exist"};
+else return {max,smax}
+}
+console.log(maxSmax(nums));
+
+
