@@ -185,9 +185,15 @@
 // console.log(isomorphic(s,t));
 
 // Anagram:letter will be same but arranged in random manner:
-const s='anagram';
-const t='nagaram';
+// const s='anagram';
+// const t='nagaram';
 
-console.log(s.split('').sort().join('')===t.split('').sort().join(''));
+// console.log(s.split('').sort().join('')===t.split('').sort().join(''));
 
+
+// rotation of one word is in another:
+const s='abcde';
+const t="abced"
+
+console.log((s+s).includes(t));
 
