@@ -164,25 +164,30 @@
 
 
 // Isomorphic String:
-const s='paper';
-const t='title';
+// const s='paper';
+// const t='title';
 
-function isomorphic(s,t){
-if(s.length!==t.length) return false
+// function isomorphic(s,t){
+// if(s.length!==t.length) return false
 
-let sObj={},tObj={}
-for(let i=0;i<s.length;i++){
-    let schar=s[i];
-    let tchar=t[i];
-    if(sObj[schar] && sObj[schar]!==tchar) return false;
-    if(tObj[tchar] && tObj[tchar]!==schar) return false;
+// let sObj={},tObj={}
+// for(let i=0;i<s.length;i++){
+//     let schar=s[i];
+//     let tchar=t[i];
+//     if(sObj[schar] && sObj[schar]!==tchar) return false;
+//     if(tObj[tchar] && tObj[tchar]!==schar) return false;
 
-    sObj[schar] = tchar;
-    tObj[tchar] = schar;
-}
-return true
-}
-console.log(isomorphic(s,t));
+//     sObj[schar] = tchar;
+//     tObj[tchar] = schar;
+// }
+// return true
+// }
+// console.log(isomorphic(s,t));
 
+// Anagram:letter will be same but arranged in random manner:
+const s='anagram';
+const t='nagaram';
+
+console.log(s.split('').sort().join('')===t.split('').sort().join(''));
 
 
