@@ -328,8 +328,26 @@
 // console.log(temp);
 
 
-const nums=[3,0,1];
-let n=nums.length;
-let expectedSum=n*(n+1)/2;
-let actualSum=nums.reduce((acc,sum)=>acc+sum,0);
-console.log(expectedSum-actualSum);
+// const nums=[3,0,1];
+// let n=nums.length;
+// let expectedSum=n*(n+1)/2;
+// let actualSum=nums.reduce((acc,sum)=>acc+sum,0);
+// console.log(expectedSum-actualSum);
+
+
+// Max consecutive Ones:
+const nums = [1,1,0,1,1,1];
+let count=0;
+let maxCount=0;
+for(let num of nums){
+    if(num===1) count++;
+    else{
+        if(count>maxCount){
+            maxCount=count;
+        }
+        count=0;
+    }
+}
+
+console.log(Math.max(count,maxCount));
+ 
