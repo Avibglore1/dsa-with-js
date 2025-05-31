@@ -221,7 +221,24 @@
 // console.log(result);
 
 
-const s =  "the sky is blue"; 
-let rev=s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' ');
+// const s =  "the sky is blue"; 
+// let rev=s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' ');
 
-console.log(rev);
+// console.log(rev);
+
+
+// largest odd number in a string:
+const num = "35426";
+function largestSubstring(num){
+for(let i=0;i<num.length;i++){
+    for(let j=num.length-1;j>=0;j--){
+        let subArray=num.slice(i,j+1);
+        if(Number(subArray)%2===1) return subArray
+    }
+}
+return ''
+}
+console.log(largestSubstring(num));
+
+
+
