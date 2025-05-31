@@ -256,20 +256,31 @@
 
 
 // move zeros to the end:
-const nums=[] //[1,3,12,0,0]:
-function moveZeros(nums){
-    if(nums.length<=1) return nums;
-    let j=0;
-    for(let i=1;i<nums.length;i++){
-    if(nums[i]!==0){
-        [nums[i],nums[j]] = [nums[j],nums[i]];
-        j++
-    }
-}
-return nums
-}
-console.log(moveZeros(nums));
+// const nums=[] //[1,3,12,0,0]:
+// function moveZeros(nums){
+//     if(nums.length<=1) return nums;
+//     let j=0;
+//     for(let i=1;i<nums.length;i++){
+//     if(nums[i]!==0){
+//         [nums[i],nums[j]] = [nums[j],nums[i]];
+//         j++
+//     }
+// }
+// return nums
+// }
+// console.log(moveZeros(nums));
 
+
+const nums = [2, 3, 4, 5, 3];
+const target=3;
+
+function search(nums,target){
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]===target) return i
+    }
+    return -1
+}
+console.log(search(nums,target));
 
 
 
