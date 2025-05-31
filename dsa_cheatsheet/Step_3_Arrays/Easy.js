@@ -226,17 +226,33 @@
 
 
 // Remove duplicates from sorted Array:
-const nums=[0,0,1,1,1,2,2,3,3,4];
-let j=0;
-for(let i=1;i<nums.length;i++){
-    if(nums[i]!==nums[j]){
-        j++;
-        nums[j]=nums[i];
-    }
+// const nums=[0,0,1,1,1,2,2,3,3,4];
+// let j=0;
+// for(let i=1;i<nums.length;i++){
+//     if(nums[i]!==nums[j]){
+//         j++;
+//         nums[j]=nums[i];
+//     }
+// }
+// console.log('uniqueElements',j+1);
+
+
+// rotate array right by k places:
+const nums = [1,2,3,4,5,6,7];
+const k=3;
+reverse(0,nums.length-1);
+reverse(0,k-1);
+reverse(k,nums.length-1);
+
+function reverse(i,j){
+while(i<j){
+    [nums[i],nums[j]] = [nums[j],nums[i]];
+    i++;
+    j--
 }
-console.log('uniqueElements',j+1);
+}
 
-
+console.log(nums);
 
 
 
