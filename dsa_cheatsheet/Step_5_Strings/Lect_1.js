@@ -243,19 +243,41 @@
 
 
 // longest common prefix:
-const strs = ["dog","racecar","car"];
-function commonPrefix(strs){
-let result='';
-let str=strs[0];
-for(let i=0;i<str.length;i++){
-    let char=str[i];
-    for(let j=1;j<strs.length;j++){
-        if(i<strs[j].length && strs[j][i]!==char){
-           return result=str.slice(0,i);
-        }
+// const strs = ["dog","racecar","car"];
+// function commonPrefix(strs){
+// let result='';
+// let str=strs[0];
+// for(let i=0;i<str.length;i++){
+//     let char=str[i];
+//     for(let j=1;j<strs.length;j++){
+//         if(i<strs[j].length && strs[j][i]!==char){
+//            return result=str.slice(0,i);
+//         }
+//     }
+// }
+// return result
+// }
+// console.log(commonPrefix(strs));
+
+
+
+// Isomorphic strings:
+const s="paper";
+const t='title';
+function ismorphic(s,t){
+    if(s.length!==t.length) return false
+    let sObj={},tObj={};
+    for(let i=0;i<s.length;i++){
+        let schar=s[i];
+        let tchar = t[i];
+
+        if(sObj[schar] && sObj[schar]!==tchar) return false
+        if(tObj[tchar] && tObj[tchar]!==schar) return false
+
+        sObj[schar] = tchar;
+        tObj[tchar] = schar;
     }
+    return true
 }
-return result
-}
-console.log(commonPrefix(strs));
+console.log(ismorphic(s,t));
 
