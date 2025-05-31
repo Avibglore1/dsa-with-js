@@ -201,22 +201,27 @@
 
 /****revision***** */
 // remove outermost parenthesis:
-const s="()()";
-let count=0;
-let result='';
-for(let char of s){
-    if(char==='('){
-        if(count>0){
-            result += char
-        }
-        count++
-    }else{
-        count--;
-        if(count>0){
-            result += char
-        }
-    }
-}
+// const s="()()";
+// let count=0;
+// let result='';
+// for(let char of s){
+//     if(char==='('){
+//         if(count>0){
+//             result += char
+//         }
+//         count++
+//     }else{
+//         count--;
+//         if(count>0){
+//             result += char
+//         }
+//     }
+// }
 
-console.log(result);
+// console.log(result);
 
+
+const s =  "the sky is blue"; 
+let rev=s.trim().replace(/\s+/g,' ').split(' ').reverse().join(' ');
+
+console.log(rev);
