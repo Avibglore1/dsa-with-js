@@ -285,45 +285,51 @@
 
 
 // union of two arrays:
-const nums1= [3, 4, 6, 7, 9, 9];
-const nums2= [1, 5, 7, 8, 8];
-let i=0,j=0;
-let temp=[],k=0;
-while(i<nums1.length && j<nums2.length){
-if(nums1[i]<nums2[j]){
-    if(k===0 || temp[k-1]!==nums1[i]){
-        temp[k++]=nums1[i];
-    }
-    i++;
-}
-else if(nums1[i]===nums2[j]){
-    if(k===0 || temp[k-1]!==nums1[i]){
-        temp[k++]=nums1[i];
-    }
-    i++;
-    j++
-}
-else{
-    if(k===0 || temp[k-1]!==nums2[j]){
-        temp[k++] = nums2[j];
-    }
-    j++;
-}
-}
+// const nums1= [3, 4, 6, 7, 9, 9];
+// const nums2= [1, 5, 7, 8, 8];
+// let i=0,j=0;
+// let temp=[],k=0;
+// while(i<nums1.length && j<nums2.length){
+// if(nums1[i]<nums2[j]){
+//     if(k===0 || temp[k-1]!==nums1[i]){
+//         temp[k++]=nums1[i];
+//     }
+//     i++;
+// }
+// else if(nums1[i]===nums2[j]){
+//     if(k===0 || temp[k-1]!==nums1[i]){
+//         temp[k++]=nums1[i];
+//     }
+//     i++;
+//     j++
+// }
+// else{
+//     if(k===0 || temp[k-1]!==nums2[j]){
+//         temp[k++] = nums2[j];
+//     }
+//     j++;
+// }
+// }
 
-while(i<nums1.length){
-    if(k===0 || temp[k-1]!==nums1[i]){
-        temp[k++] = nums1[i];
-    }
-    i++
-}
+// while(i<nums1.length){
+//     if(k===0 || temp[k-1]!==nums1[i]){
+//         temp[k++] = nums1[i];
+//     }
+//     i++
+// }
 
-while(j<nums2.length){
-    if(k===0 || temp[k-1]!==nums2[j]){
-        temp[k++] = nums2[j]
-    }
-    j++
-}
+// while(j<nums2.length){
+//     if(k===0 || temp[k-1]!==nums2[j]){
+//         temp[k++] = nums2[j]
+//     }
+//     j++
+// }
 
-console.log(temp);
+// console.log(temp);
 
+
+const nums=[3,0,1];
+let n=nums.length;
+let expectedSum=n*(n+1)/2;
+let actualSum=nums.reduce((acc,sum)=>acc+sum,0);
+console.log(expectedSum-actualSum);
