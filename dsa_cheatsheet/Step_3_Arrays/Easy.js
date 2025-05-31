@@ -271,17 +271,59 @@
 // console.log(moveZeros(nums));
 
 
-const nums = [2, 3, 4, 5, 3];
-const target=3;
+// const nums = [2, 3, 4, 5, 3];
+// const target=3;
 
-function search(nums,target){
-    for(let i=0;i<nums.length;i++){
-        if(nums[i]===target) return i
+// function search(nums,target){
+//     for(let i=0;i<nums.length;i++){
+//         if(nums[i]===target) return i
+//     }
+//     return -1
+// }
+// console.log(search(nums,target));
+
+
+
+// union of two arrays:
+const nums1= [3, 4, 6, 7, 9, 9];
+const nums2= [1, 5, 7, 8, 8];
+let i=0,j=0;
+let temp=[],k=0;
+while(i<nums1.length && j<nums2.length){
+if(nums1[i]<nums2[j]){
+    if(k===0 || temp[k-1]!==nums1[i]){
+        temp[k++]=nums1[i];
     }
-    return -1
+    i++;
 }
-console.log(search(nums,target));
+else if(nums1[i]===nums2[j]){
+    if(k===0 || temp[k-1]!==nums1[i]){
+        temp[k++]=nums1[i];
+    }
+    i++;
+    j++
+}
+else{
+    if(k===0 || temp[k-1]!==nums2[j]){
+        temp[k++] = nums2[j];
+    }
+    j++;
+}
+}
 
+while(i<nums1.length){
+    if(k===0 || temp[k-1]!==nums1[i]){
+        temp[k++] = nums1[i];
+    }
+    i++
+}
 
+while(j<nums2.length){
+    if(k===0 || temp[k-1]!==nums2[j]){
+        temp[k++] = nums2[j]
+    }
+    j++
+}
 
+console.log(temp);
 
