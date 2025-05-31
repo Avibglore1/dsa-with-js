@@ -228,17 +228,34 @@
 
 
 // largest odd number in a string:
-const num = "35426";
-function largestSubstring(num){
-for(let i=0;i<num.length;i++){
-    for(let j=num.length-1;j>=0;j--){
-        let subArray=num.slice(i,j+1);
-        if(Number(subArray)%2===1) return subArray
+// const num = "35426";
+// function largestSubstring(num){
+// for(let i=0;i<num.length;i++){
+//     for(let j=num.length-1;j>=0;j--){
+//         let subArray=num.slice(i,j+1);
+//         if(Number(subArray)%2===1) return subArray
+//     }
+// }
+// return ''
+// }
+// console.log(largestSubstring(num));
+
+
+
+// longest common prefix:
+const strs = ["dog","racecar","car"];
+function commonPrefix(strs){
+let result='';
+let str=strs[0];
+for(let i=0;i<str.length;i++){
+    let char=str[i];
+    for(let j=1;j<strs.length;j++){
+        if(i<strs[j].length && strs[j][i]!==char){
+           return result=str.slice(0,i);
+        }
     }
 }
-return ''
+return result
 }
-console.log(largestSubstring(num));
-
-
+console.log(commonPrefix(strs));
 
