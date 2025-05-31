@@ -336,18 +336,26 @@
 
 
 // Max consecutive Ones:
-const nums = [1,1,0,1,1,1];
-let count=0;
-let maxCount=0;
-for(let num of nums){
-    if(num===1) count++;
-    else{
-        if(count>maxCount){
-            maxCount=count;
-        }
-        count=0;
-    }
-}
+// const nums = [1,1,0,1,1,1];
+// let count=0;
+// let maxCount=0;
+// for(let num of nums){
+//     if(num===1) count++;
+//     else{
+//         if(count>maxCount){
+//             maxCount=count;
+//         }
+//         count=0;
+//     }
+// }
 
-console.log(Math.max(count,maxCount));
+// console.log(Math.max(count,maxCount));
  
+// Every element appears twice except for one:
+const  nums = [4,1,2,1,2];
+let temp=0;
+for(let num of nums){
+    temp ^=num;
+}
+console.log(temp);
+
