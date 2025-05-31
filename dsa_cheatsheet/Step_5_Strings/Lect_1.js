@@ -192,8 +192,31 @@
 
 
 // rotation of one word is in another:
-const s='abcde';
-const t="abced"
+// const s='abcde';
+// const t="abced"
 
-console.log((s+s).includes(t));
+// console.log((s+s).includes(t));
+
+
+
+/****revision***** */
+// remove outermost parenthesis:
+const s="()()";
+let count=0;
+let result='';
+for(let char of s){
+    if(char==='('){
+        if(count>0){
+            result += char
+        }
+        count++
+    }else{
+        count--;
+        if(count>0){
+            result += char
+        }
+    }
+}
+
+console.log(result);
 
