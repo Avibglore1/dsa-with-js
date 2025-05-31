@@ -352,10 +352,28 @@
 // console.log(Math.max(count,maxCount));
  
 // Every element appears twice except for one:
-const  nums = [4,1,2,1,2];
-let temp=0;
-for(let num of nums){
-    temp ^=num;
+// const  nums = [4,1,2,1,2];
+// let temp=0;
+// for(let num of nums){
+//     temp ^=num;
+// }
+// console.log(temp);
+
+// longest subarray with specified sum:
+const nums = [-3, 2, 1];
+const k=6;
+function subArraySum(nums,k){
+    let maxLength=0
+for(let i=0;i<nums.length;i++){
+    let sum=0;
+    for(let j=i;j<nums.length;j++){
+        sum +=nums[j];
+        if(sum===k){
+            maxLength=Math.max(maxLength,j-i+1)
+        }
+    }
 }
-console.log(temp);
+return maxLength
+}
+console.log(subArraySum(nums,k));
 
