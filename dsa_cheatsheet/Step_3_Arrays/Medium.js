@@ -221,32 +221,47 @@
 
 
 // nextPermutaion:
-const arr=[1,5,1];
-let n=arr.length;
-let i=n-2;
-while(i>=0 && arr[i]>=arr[i+1]){
-    i--;
-}
-if(i>=0){
-    let j=n-1;
-    while(arr[j]<=arr[i]){
-        j--
-    }
-    [arr[i],arr[j]] = [arr[j],arr[i]];
-}
+// const arr=[1,5,1];
+// let n=arr.length;
+// let i=n-2;
+// while(i>=0 && arr[i]>=arr[i+1]){
+//     i--;
+// }
+// if(i>=0){
+//     let j=n-1;
+//     while(arr[j]<=arr[i]){
+//         j--
+//     }
+//     [arr[i],arr[j]] = [arr[j],arr[i]];
+// }
 
-reverse(arr,i+1,n-1);
+// reverse(arr,i+1,n-1);
 
-function reverse(nums,start,end){
-    while(start<end){
-        [nums[start],nums[end]] = [nums[end],nums[start]];
-        start++;
-        end--
-    }
+// function reverse(nums,start,end){
+//     while(start<end){
+//         [nums[start],nums[end]] = [nums[end],nums[start]];
+//         start++;
+//         end--
+//     }
     
+// }
+
+
+
+// console.log(arr);
+
+
+// leaders in an array:
+const nums=[1,2,5,3,1,2]
+function leader(nums){
+let largest=nums[nums.length-1];
+let arr=[largest];
+for(let i=nums.length-2;i>=0;i--){
+    if(nums[i]>largest){
+        largest=nums[i];
+        arr.unshift(nums[i]);
+    }
 }
-
-
-
-console.log(arr);
-
+return arr
+}
+console.log(leader(nums));

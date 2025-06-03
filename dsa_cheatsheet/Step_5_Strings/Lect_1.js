@@ -283,15 +283,21 @@
 
 
 // Rotate String:
-const s='abcde';
-const goal="cdeab"
-function rotate(s,goal){
-if(s.length!==goal.length) return (false);
+// const s='abcde';
+// const goal="cdeab"
+// function rotate(s,goal){
+// if(s.length!==goal.length) return (false);
 
-return ((s+s).includes(goal));
+// return ((s+s).includes(goal));
+// }
+// console.log(rotate(s,goal));
+
+
+// anagram string:
+const s='rat';
+const t='car';
+
+function anagram(s,t){
+return s.split('').sort().join('')===t.split('').sort().join('')
 }
-console.log(rotate(s,goal));
-
-
-
-
+console.log(anagram(s,t))
