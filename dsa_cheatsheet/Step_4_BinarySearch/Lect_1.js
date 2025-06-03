@@ -258,22 +258,40 @@
 // console.log(upperBound(nums,target));
 
 // floor and ceil in an array:
-const nums=[3, 4, 4, 7, 8, 10];
-const x=8;
-function floorCeil(nums,x){
+// const nums=[3, 4, 4, 7, 8, 10];
+// const x=8;
+// function floorCeil(nums,x){
+// let left=0,right=nums.length-1;
+// let floor=-1,ceil=-1;
+// while(left<=right){
+//     let mid=Math.floor((left+right)/2);
+//     if(nums[mid]===x) return [x,x]
+//     else if(nums[mid]>x){
+//         ceil=nums[mid];
+//         right=mid-1;
+//     }else{
+//         floor=nums[mid];
+//         left=mid+1;
+//     }
+// }
+// return [floor,ceil]
+// }
+// console.log(floorCeil(nums,x));
+
+
+// Search Insert Position:
+const nums=[1,3,5,6];
+const target=7;
+function insert(nums,target){
 let left=0,right=nums.length-1;
-let floor=-1,ceil=-1;
+let index=-1;
 while(left<=right){
     let mid=Math.floor((left+right)/2);
-    if(nums[mid]===x) return [x,x]
-    else if(nums[mid]>x){
-        ceil=nums[mid];
+    if(nums[mid]>=target){
+        index=mid;
         right=mid-1;
-    }else{
-        floor=nums[mid];
-        left=mid+1;
-    }
+    }else left=mid+1
 }
-return [floor,ceil]
+return index===-1?nums.length:index
 }
-console.log(floorCeil(nums,x));
+console.log(insert(nums,target));
