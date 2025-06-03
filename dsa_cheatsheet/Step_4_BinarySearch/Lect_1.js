@@ -239,21 +239,41 @@
 
  
 // upper Bound:
-const nums=[1, 2, 4, 6, 8];
-const target=6;
-function upperBound(nums,target){
+// const nums=[1, 2, 4, 6, 8];
+// const target=6;
+// function upperBound(nums,target){
+// let left=0,right=nums.length-1;
+// let ans=nums.length;
+// while(left<=right){
+//     let mid=Math.floor((left+right)/2);
+//     if(nums[mid]>target){
+//         ans=mid;
+//         right=mid-1;
+//     }else{
+//         left=mid+1
+//     }
+// }
+// return ans
+// }
+// console.log(upperBound(nums,target));
+
+// floor and ceil in an array:
+const nums=[3, 4, 4, 7, 8, 10];
+const x=8;
+function floorCeil(nums,x){
 let left=0,right=nums.length-1;
-let ans=nums.length;
+let floor=-1,ceil=-1;
 while(left<=right){
     let mid=Math.floor((left+right)/2);
-    if(nums[mid]>target){
-        ans=mid;
+    if(nums[mid]===x) return [x,x]
+    else if(nums[mid]>x){
+        ceil=nums[mid];
         right=mid-1;
     }else{
-        left=mid+1
+        floor=nums[mid];
+        left=mid+1;
     }
 }
-return ans
+return [floor,ceil]
 }
-console.log(upperBound(nums,target));
-
+console.log(floorCeil(nums,x));
