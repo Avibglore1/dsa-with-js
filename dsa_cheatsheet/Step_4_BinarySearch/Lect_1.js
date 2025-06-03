@@ -219,6 +219,22 @@
 // }
 // console.log(singleElement(nums));
 
-
+/*****reviosion******** */
+// lowerBound:
+const nums=[1, 2, 4, 6, 8];
+let target=9;
+function lowerBound(nums,target){
+let left=0,right=nums.length-1;
+let ans=nums.length;
+while(left<=right){
+    let mid=Math.floor((left+right)/2);
+    if(nums[mid]>=target){
+        ans=mid;
+        right=mid-1;
+    }else left=mid+1;
+}
+return ans
+}
+console.log(lowerBound(nums,target));
 
  
