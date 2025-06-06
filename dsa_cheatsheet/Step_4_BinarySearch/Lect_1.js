@@ -300,28 +300,29 @@
 
 // first and lastIndex of target Element in an array:
 
-function occurence(nums,target){
-let left=0,right=nums.length-1;
-let leftIdx=-1,rightIdx=-1;
-while(left<=right){
-    let mid=Math.floor((left+right)/2);
-    if(nums[mid]===target){
-        leftIdx=mid;
-        right=mid-1
-    }else if(nums[mid]>target) right=mid-1;
-    else left=mid+1
-}
-if(leftIdx===-1) return [-1,-1]
-left=leftIdx,right=nums.length-1;
-while(left<=right){
-    mid=Math.floor((left+right)/2);
-    if(nums[mid]>target) right=mid-1
-    else{
-        if(nums[mid]===target) rightIdx=mid;
-        left=mid+1
-    }
-}
-return [leftIdx,rightIdx]
-}
-console.log(occurence([1, 2, 3, 4, 5], 6));
+// function occurence(nums,target){
+// let left=0,right=nums.length-1;
+// let leftIdx=-1,rightIdx=-1;
+// while(left<=right){
+//     let mid=Math.floor((left+right)/2);
+//     if(nums[mid]===target){
+//         leftIdx=mid;
+//         right=mid-1
+//     }else if(nums[mid]>target) right=mid-1;
+//     else left=mid+1
+// }
+// if(leftIdx===-1) return [-1,-1]
+// left=leftIdx,right=nums.length-1;
+// while(left<=right){
+//     mid=Math.floor((left+right)/2);
+//     if(nums[mid]>target) right=mid-1
+//     else{
+//         if(nums[mid]===target) rightIdx=mid;
+//         left=mid+1
+//     }
+// }
+// return [leftIdx,rightIdx]
+// }
+// console.log(occurence([1, 2, 3, 4, 5], 6));
+
 

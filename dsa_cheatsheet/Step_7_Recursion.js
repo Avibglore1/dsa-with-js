@@ -314,7 +314,17 @@
 // console.log(Number(6))
 
 
-
+// implement Math.pow() :
+const x=2;
+const n=-10;
+function pow(x,n){
+if(n===0) return 1
+if(n<0) return 1/pow(x,-n)
+let half=pow(x,Math.floor(n/2));
+if(n%2===0) return half*half;
+else return half*half*x    
+}
+console.log(pow(x,n))
 
 
 
