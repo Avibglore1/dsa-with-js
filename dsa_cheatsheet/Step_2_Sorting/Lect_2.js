@@ -104,3 +104,38 @@
 //     arr[j+1]=key;
 // }
 // console.log(arr);
+
+
+const nums=[8,5,2,7,4,9,2];
+function mergeSort(){
+function divide(nums){
+if(nums.length<=1) return nums
+let mid=Math.floor((nums.length)/2);
+let mergeL=divide(nums.slice(0,mid));
+let mergeR=divide(nums.slice(mid));
+return merge(mergeL,mergeR);
+}
+function merge(left,right){
+    let temp=[];
+    let i=0,j=0,k=0;
+    while(i<left.length && j<right.length){
+        if(left[i]<right[j]) temp[k++]=left[i++];
+        else if(left[i]===right[j]){
+            temp[k++]=left[i++];
+            j++;
+        }else temp[k++]=right[j++]
+    }
+    while(i<left.length){
+        temp[k++]=left[i++];
+    }
+    while(j<right.length){
+        temp[k++]=right[j++]
+    }
+    return temp
+}
+return divide(nums);
+}
+
+
+
+console.log(mergeSort());
