@@ -114,4 +114,13 @@
 // console.log(beautyString(word));
 
 
+const jewels='aA';
+const stones="aAAbbbb";
+let count=0
+let jewelSet=new Set(jewels);
+console.log(jewelSet);
+for(let stone of stones){
+    if(jewelSet.has(stone)) count++
+}
+console.log(count);
 
